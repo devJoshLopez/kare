@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		553A36EE1A786CE3008DD43D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36E91A786CE3008DD43D /* Bolts.framework */; };
+		553A36EF1A786CE3008DD43D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36EA1A786CE3008DD43D /* Parse.framework */; };
+		553A36F01A786CE3008DD43D /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36EB1A786CE3008DD43D /* ParseCrashReporting.framework */; };
+		553A36F11A786CE3008DD43D /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36EC1A786CE3008DD43D /* ParseFacebookUtils.framework */; };
+		553A36F21A786CE3008DD43D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36ED1A786CE3008DD43D /* ParseUI.framework */; };
+		55C0742F1A6C649500F6BF94 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0742E1A6C649500F6BF94 /* RegisterViewController.swift */; };
+		55C074311A6C8E3B00F6BF94 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C074301A6C8E3B00F6BF94 /* ForgotViewController.swift */; };
+		55C074331A6C9E8200F6BF94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C074321A6C9E8200F6BF94 /* LoginViewController.swift */; };
+		55C0D9A61A719BA8002A8A5B /* StoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0D9A51A719BA8002A8A5B /* StoryListTableViewCell.swift */; };
+		55C0D9A81A71AB9E002A8A5B /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C0D9A71A71AB9E002A8A5B /* libstdc++.6.dylib */; };
+		55C2A4281A606B10003907FD /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55C2A4251A606B10003907FD /* Nunito-Bold.ttf */; };
+		55C2A4291A606B10003907FD /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55C2A4261A606B10003907FD /* Nunito-Light.ttf */; };
+		55C2A42A1A606B10003907FD /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55C2A4271A606B10003907FD /* Nunito-Regular.ttf */; };
+		55C3E6251A9A9803000F73FC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3E6241A9A9803000F73FC /* AssetsLibrary.framework */; };
+		55C3E6271A9A9D45000F73FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3E6261A9A9D45000F73FC /* ImageIO.framework */; };
+		55C3E6291A9AB128000F73FC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3E6281A9AB128000F73FC /* CoreImage.framework */; };
+		55C414C91A7588B80086B4F7 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C414C81A7588B80086B4F7 /* PageViewController.swift */; };
+		55C5BF201A6AEA42003339C6 /* AddStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5BF1F1A6AEA42003339C6 /* AddStoryViewController.swift */; };
+		55C7C5401A64717000D9C38A /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7C53F1A64717000D9C38A /* StoryListViewController.swift */; };
+		55C7C5421A6471C600D9C38A /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */; };
+		55C7C5441A64723600D9C38A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7C5431A64723600D9C38A /* MenuViewController.swift */; };
+		55C92F7B1A73721E00542BA8 /* UITextView+placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */; };
+		55F0FAED1A5EFBBE002F2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */; };
+		55F0FAF21A5EFBBE002F2601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F0FAF01A5EFBBE002F2601 /* Main.storyboard */; };
+		55F0FAF41A5EFBBE002F2601 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F0FAF31A5EFBBE002F2601 /* Images.xcassets */; };
+		55F0FAF71A5EFBBE002F2601 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F0FAF51A5EFBBE002F2601 /* LaunchScreen.xib */; };
+		55F0FB031A5EFBBF002F2601 /* KareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0FB021A5EFBBF002F2601 /* KareTests.swift */; };
+		55F0FB0F1A5EFCBE002F2601 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB0C1A5EFC8D002F2601 /* AudioToolbox.framework */; };
+		55F0FB111A5EFCCA002F2601 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB101A5EFCCA002F2601 /* CFNetwork.framework */; };
+		55F0FB131A5EFCD6002F2601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB121A5EFCD6002F2601 /* CoreGraphics.framework */; };
+		55F0FB151A5EFCE3002F2601 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB141A5EFCE3002F2601 /* CoreLocation.framework */; };
+		55F0FB171A5EFCF2002F2601 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB161A5EFCF2002F2601 /* MobileCoreServices.framework */; };
+		55F0FB191A5EFCFA002F2601 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB181A5EFCFA002F2601 /* QuartzCore.framework */; };
+		55F0FB1B1A5EFD05002F2601 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB1A1A5EFD05002F2601 /* Security.framework */; };
+		55F0FB1D1A5EFD0B002F2601 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB1C1A5EFD0B002F2601 /* StoreKit.framework */; };
+		55F0FB1F1A5EFD18002F2601 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB1E1A5EFD18002F2601 /* SystemConfiguration.framework */; };
+		55F0FB211A5EFD21002F2601 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB201A5EFD21002F2601 /* libz.dylib */; };
+		55F0FB231A5EFD2E002F2601 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F0FB221A5EFD2E002F2601 /* libsqlite3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55F0FAFD1A5EFBBF002F2601 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55F0FADF1A5EFBBE002F2601 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55F0FAE61A5EFBBE002F2601;
+			remoteInfo = Kare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		553A36E91A786CE3008DD43D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		553A36EA1A786CE3008DD43D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		553A36EB1A786CE3008DD43D /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		553A36EC1A786CE3008DD43D /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		553A36ED1A786CE3008DD43D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		55C0742E1A6C649500F6BF94 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		55C074301A6C8E3B00F6BF94 /* ForgotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
+		55C074321A6C9E8200F6BF94 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		55C0D9A51A719BA8002A8A5B /* StoryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListTableViewCell.swift; sourceTree = "<group>"; };
+		55C0D9A71A71AB9E002A8A5B /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		55C2A4251A606B10003907FD /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		55C2A4261A606B10003907FD /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		55C2A4271A606B10003907FD /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		55C3E6241A9A9803000F73FC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		55C3E6261A9A9D45000F73FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		55C3E6281A9AB128000F73FC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		55C414C81A7588B80086B4F7 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		55C5BF1F1A6AEA42003339C6 /* AddStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStoryViewController.swift; sourceTree = "<group>"; };
+		55C7C53F1A64717000D9C38A /* StoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryListViewController.swift; path = "/Users/joshlopez/Desktop/Xcode Projects/Kare/Kare/StoryListViewController.swift"; sourceTree = "<absolute>"; };
+		55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
+		55C7C5431A64723600D9C38A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+placeholder.swift"; sourceTree = "<group>"; };
+		55F0FAE71A5EFBBE002F2601 /* Kare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F0FAEB1A5EFBBE002F2601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55F0FAF11A5EFBBE002F2601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55F0FAF31A5EFBBE002F2601 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		55F0FAF61A5EFBBE002F2601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		55F0FAFC1A5EFBBF002F2601 /* KareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F0FB011A5EFBBF002F2601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55F0FB021A5EFBBF002F2601 /* KareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KareTests.swift; sourceTree = "<group>"; };
+		55F0FB0C1A5EFC8D002F2601 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		55F0FB101A5EFCCA002F2601 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		55F0FB121A5EFCD6002F2601 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		55F0FB141A5EFCE3002F2601 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		55F0FB161A5EFCF2002F2601 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		55F0FB181A5EFCFA002F2601 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		55F0FB1A1A5EFD05002F2601 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		55F0FB1C1A5EFD0B002F2601 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		55F0FB1E1A5EFD18002F2601 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		55F0FB201A5EFD21002F2601 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		55F0FB221A5EFD2E002F2601 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		55F0FB2E1A5EFE57002F2601 /* Kare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kare-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55F0FAE41A5EFBBE002F2601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C3E6291A9AB128000F73FC /* CoreImage.framework in Frameworks */,
+				55C3E6271A9A9D45000F73FC /* ImageIO.framework in Frameworks */,
+				55C3E6251A9A9803000F73FC /* AssetsLibrary.framework in Frameworks */,
+				55C0D9A81A71AB9E002A8A5B /* libstdc++.6.dylib in Frameworks */,
+				553A36EE1A786CE3008DD43D /* Bolts.framework in Frameworks */,
+				553A36EF1A786CE3008DD43D /* Parse.framework in Frameworks */,
+				553A36F01A786CE3008DD43D /* ParseCrashReporting.framework in Frameworks */,
+				553A36F11A786CE3008DD43D /* ParseFacebookUtils.framework in Frameworks */,
+				553A36F21A786CE3008DD43D /* ParseUI.framework in Frameworks */,
+				55F0FB231A5EFD2E002F2601 /* libsqlite3.dylib in Frameworks */,
+				55F0FB211A5EFD21002F2601 /* libz.dylib in Frameworks */,
+				55F0FB1F1A5EFD18002F2601 /* SystemConfiguration.framework in Frameworks */,
+				55F0FB1D1A5EFD0B002F2601 /* StoreKit.framework in Frameworks */,
+				55F0FB1B1A5EFD05002F2601 /* Security.framework in Frameworks */,
+				55F0FB191A5EFCFA002F2601 /* QuartzCore.framework in Frameworks */,
+				55F0FB171A5EFCF2002F2601 /* MobileCoreServices.framework in Frameworks */,
+				55F0FB151A5EFCE3002F2601 /* CoreLocation.framework in Frameworks */,
+				55F0FB131A5EFCD6002F2601 /* CoreGraphics.framework in Frameworks */,
+				55F0FB111A5EFCCA002F2601 /* CFNetwork.framework in Frameworks */,
+				55F0FB0F1A5EFCBE002F2601 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F0FAF91A5EFBBF002F2601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55C2A4231A606A6C003907FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				55C2A4241A606A88003907FD /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		55C2A4241A606A88003907FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				55C2A4251A606B10003907FD /* Nunito-Bold.ttf */,
+				55C2A4261A606B10003907FD /* Nunito-Light.ttf */,
+				55C2A4271A606B10003907FD /* Nunito-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		55C92F7C1A7372A000542BA8 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
+		55F0FADE1A5EFBBE002F2601 = {
+			isa = PBXGroup;
+			children = (
+				55F0FAE91A5EFBBE002F2601 /* Kare */,
+				55C2A4231A606A6C003907FD /* Resources */,
+				55F0FB0E1A5EFC99002F2601 /* Frameworks */,
+				55F0FAFF1A5EFBBF002F2601 /* KareTests */,
+				55F0FAE81A5EFBBE002F2601 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55F0FAE81A5EFBBE002F2601 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55F0FAE71A5EFBBE002F2601 /* Kare.app */,
+				55F0FAFC1A5EFBBF002F2601 /* KareTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55F0FAE91A5EFBBE002F2601 /* Kare */ = {
+			isa = PBXGroup;
+			children = (
+				55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */,
+				55C414C81A7588B80086B4F7 /* PageViewController.swift */,
+				55C7C5431A64723600D9C38A /* MenuViewController.swift */,
+				55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */,
+				55C7C53F1A64717000D9C38A /* StoryListViewController.swift */,
+				55C0D9A51A719BA8002A8A5B /* StoryListTableViewCell.swift */,
+				55F0FAF01A5EFBBE002F2601 /* Main.storyboard */,
+				55C074321A6C9E8200F6BF94 /* LoginViewController.swift */,
+				55C0742E1A6C649500F6BF94 /* RegisterViewController.swift */,
+				55C074301A6C8E3B00F6BF94 /* ForgotViewController.swift */,
+				55C5BF1F1A6AEA42003339C6 /* AddStoryViewController.swift */,
+				55F0FAF51A5EFBBE002F2601 /* LaunchScreen.xib */,
+				55F0FB2E1A5EFE57002F2601 /* Kare-Bridging-Header.h */,
+				55F0FAF31A5EFBBE002F2601 /* Images.xcassets */,
+				55C92F7C1A7372A000542BA8 /* Functions */,
+				55F0FAEA1A5EFBBE002F2601 /* Supporting Files */,
+			);
+			path = Kare;
+			sourceTree = "<group>";
+		};
+		55F0FAEA1A5EFBBE002F2601 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55F0FAEB1A5EFBBE002F2601 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55F0FAFF1A5EFBBF002F2601 /* KareTests */ = {
+			isa = PBXGroup;
+			children = (
+				55F0FB021A5EFBBF002F2601 /* KareTests.swift */,
+				55F0FB001A5EFBBF002F2601 /* Supporting Files */,
+			);
+			path = KareTests;
+			sourceTree = "<group>";
+		};
+		55F0FB001A5EFBBF002F2601 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55F0FB011A5EFBBF002F2601 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55F0FB0E1A5EFC99002F2601 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55C3E6281A9AB128000F73FC /* CoreImage.framework */,
+				55C3E6261A9A9D45000F73FC /* ImageIO.framework */,
+				55C3E6241A9A9803000F73FC /* AssetsLibrary.framework */,
+				553A36E91A786CE3008DD43D /* Bolts.framework */,
+				553A36EA1A786CE3008DD43D /* Parse.framework */,
+				553A36EB1A786CE3008DD43D /* ParseCrashReporting.framework */,
+				553A36EC1A786CE3008DD43D /* ParseFacebookUtils.framework */,
+				553A36ED1A786CE3008DD43D /* ParseUI.framework */,
+				55C0D9A71A71AB9E002A8A5B /* libstdc++.6.dylib */,
+				55F0FB221A5EFD2E002F2601 /* libsqlite3.dylib */,
+				55F0FB201A5EFD21002F2601 /* libz.dylib */,
+				55F0FB1E1A5EFD18002F2601 /* SystemConfiguration.framework */,
+				55F0FB1C1A5EFD0B002F2601 /* StoreKit.framework */,
+				55F0FB1A1A5EFD05002F2601 /* Security.framework */,
+				55F0FB181A5EFCFA002F2601 /* QuartzCore.framework */,
+				55F0FB161A5EFCF2002F2601 /* MobileCoreServices.framework */,
+				55F0FB141A5EFCE3002F2601 /* CoreLocation.framework */,
+				55F0FB121A5EFCD6002F2601 /* CoreGraphics.framework */,
+				55F0FB101A5EFCCA002F2601 /* CFNetwork.framework */,
+				55F0FB0C1A5EFC8D002F2601 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55F0FAE61A5EFBBE002F2601 /* Kare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F0FB061A5EFBBF002F2601 /* Build configuration list for PBXNativeTarget "Kare" */;
+			buildPhases = (
+				55F0FAE31A5EFBBE002F2601 /* Sources */,
+				55F0FAE41A5EFBBE002F2601 /* Frameworks */,
+				55F0FAE51A5EFBBE002F2601 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kare;
+			productName = Kare;
+			productReference = 55F0FAE71A5EFBBE002F2601 /* Kare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55F0FAFB1A5EFBBF002F2601 /* KareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F0FB091A5EFBBF002F2601 /* Build configuration list for PBXNativeTarget "KareTests" */;
+			buildPhases = (
+				55F0FAF81A5EFBBF002F2601 /* Sources */,
+				55F0FAF91A5EFBBF002F2601 /* Frameworks */,
+				55F0FAFA1A5EFBBF002F2601 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55F0FAFE1A5EFBBF002F2601 /* PBXTargetDependency */,
+			);
+			name = KareTests;
+			productName = KareTests;
+			productReference = 55F0FAFC1A5EFBBF002F2601 /* KareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55F0FADF1A5EFBBE002F2601 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Josh Lopez";
+				TargetAttributes = {
+					55F0FAE61A5EFBBE002F2601 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = MJ8D4686GF;
+					};
+					55F0FAFB1A5EFBBF002F2601 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 55F0FAE61A5EFBBE002F2601;
+					};
+				};
+			};
+			buildConfigurationList = 55F0FAE21A5EFBBE002F2601 /* Build configuration list for PBXProject "Kare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55F0FADE1A5EFBBE002F2601;
+			productRefGroup = 55F0FAE81A5EFBBE002F2601 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55F0FAE61A5EFBBE002F2601 /* Kare */,
+				55F0FAFB1A5EFBBF002F2601 /* KareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55F0FAE51A5EFBBE002F2601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C2A42A1A606B10003907FD /* Nunito-Regular.ttf in Resources */,
+				55F0FAF21A5EFBBE002F2601 /* Main.storyboard in Resources */,
+				55C2A4291A606B10003907FD /* Nunito-Light.ttf in Resources */,
+				55F0FAF71A5EFBBE002F2601 /* LaunchScreen.xib in Resources */,
+				55C2A4281A606B10003907FD /* Nunito-Bold.ttf in Resources */,
+				55F0FAF41A5EFBBE002F2601 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F0FAFA1A5EFBBF002F2601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55F0FAE31A5EFBBE002F2601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C5BF201A6AEA42003339C6 /* AddStoryViewController.swift in Sources */,
+				55C0D9A61A719BA8002A8A5B /* StoryListTableViewCell.swift in Sources */,
+				55C414C91A7588B80086B4F7 /* PageViewController.swift in Sources */,
+				55C7C5441A64723600D9C38A /* MenuViewController.swift in Sources */,
+				55C92F7B1A73721E00542BA8 /* UITextView+placeholder.swift in Sources */,
+				55C0742F1A6C649500F6BF94 /* RegisterViewController.swift in Sources */,
+				55C7C5421A6471C600D9C38A /* StoryDetailViewController.swift in Sources */,
+				55C074331A6C9E8200F6BF94 /* LoginViewController.swift in Sources */,
+				55C074311A6C8E3B00F6BF94 /* ForgotViewController.swift in Sources */,
+				55C7C5401A64717000D9C38A /* StoryListViewController.swift in Sources */,
+				55F0FAED1A5EFBBE002F2601 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F0FAF81A5EFBBF002F2601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F0FB031A5EFBBF002F2601 /* KareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55F0FAFE1A5EFBBF002F2601 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55F0FAE61A5EFBBE002F2601 /* Kare */;
+			targetProxy = 55F0FAFD1A5EFBBF002F2601 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55F0FAF01A5EFBBE002F2601 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55F0FAF11A5EFBBE002F2601 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55F0FAF51A5EFBBE002F2601 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55F0FAF61A5EFBBE002F2601 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55F0FB041A5EFBBF002F2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55F0FB051A5EFBBF002F2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55F0FB071A5EFBBF002F2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Kare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55F0FB081A5EFBBF002F2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Kare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kare-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		55F0FB0A1A5EFBBF002F2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kare.app/Kare";
+			};
+			name = Debug;
+		};
+		55F0FB0B1A5EFBBF002F2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kare.app/Kare";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55F0FAE21A5EFBBE002F2601 /* Build configuration list for PBXProject "Kare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F0FB041A5EFBBF002F2601 /* Debug */,
+				55F0FB051A5EFBBF002F2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F0FB061A5EFBBF002F2601 /* Build configuration list for PBXNativeTarget "Kare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F0FB071A5EFBBF002F2601 /* Debug */,
+				55F0FB081A5EFBBF002F2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F0FB091A5EFBBF002F2601 /* Build configuration list for PBXNativeTarget "KareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F0FB0A1A5EFBBF002F2601 /* Debug */,
+				55F0FB0B1A5EFBBF002F2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55F0FADF1A5EFBBE002F2601 /* Project object */;
+}
