@@ -16,6 +16,8 @@ import AssetsLibrary
 var storyId = String()
 
 
+
+
 class AddStoryViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
 
@@ -23,13 +25,12 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet var storyBodyInputField: UITextView!
     @IBOutlet var pickedImage: UIImageView!
     
-
-
     var imageSelected:Bool = false
     
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    var imageLongitude = Double()
+    var imageLatitude = Double()
     
-    var imageLocation = PFGeoPoint()
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     
     
@@ -74,21 +75,28 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         
         library.assetForURL(url, resultBlock: {
             (asset: ALAsset!) in
-            if asset != nil {
+            if asset.valueForProperty(ALAssetPropertyLocation) != nil {
                 
-                //print the location
-                println(asset.valueForProperty(ALAssetPropertyLocation))
+                // print the location
+                // println(asset.valueForProperty(ALAssetPropertyLocation))
                 
                 var imageAssetLocation = asset.valueForProperty(ALAssetPropertyLocation) as CLLocation
-                var imageLongitude = imageAssetLocation.coordinate.longitude
-                var imageLatitude = imageAssetLocation.coordinate.latitude
-                let imageLocation = PFGeoPoint(latitude: imageLatitude, longitude: imageLongitude)
+                let imageLongitude = imageAssetLocation.coordinate.longitude as Double
+                let imageLatitude = imageAssetLocation.coordinate.latitude as Double
                 
+                // this is showing that it has longitude and latitude
+                println("image longitude: \(imageLongitude) image latitude: \(imageLatitude)")
+                
+            } else {
+                
+                // TO DO: Need to ask user if no location is found in image if they would like to use current location instead.
+                self.displayAlert("Location Required!", error: "We could not find location info in your image. Would you like to use your current location instead?")
             }
             }, failureBlock: {
                 (error: NSError!) in
                 
-                NSLog("Error!")
+                println("Error! \(error)")
+                
             }
         )
 
@@ -143,7 +151,12 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
-            println(imageLocation)
+            let imageLocation:PFGeoPoint = PFGeoPoint(latitude: imageLatitude, longitude: imageLongitude)
+            
+            println("latitude: \(imageLatitude) longitude: \(imageLongitude)")
+            
+        // NEEDS FIX: The latitude and longitude are being set to 0 for some reason.
+            println("imageLocation: \(imageLocation)")
         
             // Creates a story object to send to parse.com
             var story = PFObject(className:"Story")
