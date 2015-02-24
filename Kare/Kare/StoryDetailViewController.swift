@@ -22,6 +22,17 @@ class StoryDetailViewController: UIViewController {
     
     var objectID: String!
     
+    
+    
+    
+    @IBAction func addHeartButton(sender: AnyObject) {
+        
+        
+    }
+    
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         
         var queryStoryDetailData = PFQuery(className:"Story")
@@ -40,7 +51,6 @@ class StoryDetailViewController: UIViewController {
                     let story:PFObject = object as PFObject
                     
                     self.storyLoveDetail.text = story.objectForKey("storyLove") as? String
-                    self.storyCommentsCountDetail.text = story.objectForKey("storyCommentCount") as? String
                     self.storyCommentsCountDetail.text = story.objectForKey("storyCommentCount") as? String
                     self.storyTitleDetail.text = story.objectForKey("storyTitle") as? String
                     self.comboDistanceDatestampDetail.text = "Distance & Datestamp"

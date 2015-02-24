@@ -81,11 +81,11 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
                 // println(asset.valueForProperty(ALAssetPropertyLocation))
                 
                 var imageAssetLocation = asset.valueForProperty(ALAssetPropertyLocation) as CLLocation
-                let imageLongitude = imageAssetLocation.coordinate.longitude as Double
-                let imageLatitude = imageAssetLocation.coordinate.latitude as Double
+                self.imageLongitude = imageAssetLocation.coordinate.longitude as Double
+                self.imageLatitude = imageAssetLocation.coordinate.latitude as Double
                 
                 // this is showing that it has longitude and latitude
-                println("image longitude: \(imageLongitude) image latitude: \(imageLatitude)")
+                println("image longitude: \(self.imageLongitude) image latitude: \(self.imageLatitude)")
                 
             } else {
                 
@@ -160,11 +160,11 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         
             // Creates a story object to send to parse.com
             var story = PFObject(className:"Story")
-            story["storyLove"] = "0"
-            story["storyCommentCount"] = "0"
+            story["storyLove"] = 0
+            story["storyCommentCount"] = 0
             story["storyLocation"] = imageLocation
             story["storyDistanceFromUser"] = "miles away"
-            story["storyFlagCount"] = "0"
+            story["storyFlagCount"] = 0
             story["username"] = PFUser.currentUser()
             story["storyTitle"] = storyTitleInputField.text
             story["storyBody"] = storyBodyInputField.text

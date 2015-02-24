@@ -277,8 +277,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="My Stories"/>
-                                    <segment title="Show All"/>
-                                    <segment title="Friends Stories"/>
+                                    <segment title="All Stories"/>
+                                    <segment title="Friend Stories"/>
                                 </segments>
                                 <color key="tintColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
@@ -912,9 +912,17 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Flag" id="44D-uI-1lh"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PzX-eO-hX9"/>
                                     <barButtonItem title="Friend" id="vY5-Nv-75V"/>
-                                    <barButtonItem title="Heart" id="Rrt-r0-kul"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yrG-ok-nbQ"/>
+                                    <barButtonItem title="Heart" id="Rrt-r0-kul">
+                                        <connections>
+                                            <action selector="addHeartButton:" destination="VB9-7G-Bf9" id="ups-7k-dhl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1ha-SW-9zX"/>
                                     <barButtonItem title="Comment" id="6m3-tM-WgA"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="86N-yP-NzA"/>
                                     <barButtonItem title="Share" id="5kB-xC-7W0"/>
                                 </items>
                             </toolbar>
