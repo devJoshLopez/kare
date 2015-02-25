@@ -908,7 +908,7 @@
                                     <constraint firstAttribute="width" constant="300" id="gbd-UH-Tnd"/>
                                 </constraints>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bq-zD-1db">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bq-zD-1db">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Flag" id="44D-uI-1lh"/>
@@ -973,6 +973,7 @@
                         <outlet property="storyAuthorDetail" destination="jDF-aw-6F7" id="Qzv-bl-5bS"/>
                         <outlet property="storyBodyTextDetail" destination="3Pf-Ea-N5v" id="UgN-O9-qid"/>
                         <outlet property="storyCommentsCountDetail" destination="Y5L-t8-sJN" id="23b-a0-SlE"/>
+                        <outlet property="storyDetailToolbar" destination="7bq-zD-1db" id="fFs-Xy-Gyr"/>
                         <outlet property="storyImageDetail" destination="yIb-15-Cum" id="7fY-xU-kt6"/>
                         <outlet property="storyLoveDetail" destination="xGg-Ua-MDm" id="5zZ-hd-mhg"/>
                         <outlet property="storyTitleDetail" destination="nht-jB-dZy" id="f8d-Pz-ug9"/>

@@ -17,6 +17,7 @@ class StoryDetailViewController: UIViewController {
     @IBOutlet var comboDistanceDatestampDetail: UILabel!
     @IBOutlet var storyImageDetail: UIImageView!
     @IBOutlet var storyBodyTextDetail: UITextView!
+    @IBOutlet var storyDetailToolbar: UIToolbar!
     
     var queryStoryDetailData:NSMutableArray = NSMutableArray()
     
@@ -24,8 +25,10 @@ class StoryDetailViewController: UIViewController {
     
     var currentUser = PFUser.currentUser()
     
+    
     @IBAction func addHeartButton(sender: AnyObject) {
         
+        // query the story
         var queryStoryLove = PFQuery(className:"Story")
         queryStoryLove.getObjectInBackgroundWithId(objectID) {
             (story: PFObject!, error: NSError!) -> Void in
@@ -35,22 +38,22 @@ class StoryDetailViewController: UIViewController {
             } else {
 
                 var currentUserId = self.currentUser.objectId
+                var storyAuthor: AnyObject! = story.objectForKey("username")
                 var storyLove = story.objectForKey("storyLove") as NSMutableArray
                 
-                if !storyLove.containsObject(currentUserId) {
-                    storyLove.addObject(currentUserId)
+                // do not allow the author of the story to love the story
+                if currentUserId != storyAuthor.objectId as NSString {
+                    println("you are not the author")
+                    if !storyLove.containsObject(currentUserId) {
+                        storyLove.addObject(currentUserId)
+                        println("added user to storyLove")
+                    } else if storyLove.containsObject(currentUserId) {
+                        storyLove.removeObject(currentUserId)
+                        println("removed user from storyLove")
+                    }
                     story.saveInBackground()
                     self.storyLoveDetail.text = String(storyLove.count)
-                    println("added user to storyLove")
-                } else {
-                    storyLove.removeObject(currentUserId)
-                    story.saveInBackground()
-                    self.storyLoveDetail.text = String(storyLove.count)
-                    println(storyLove)
                 }
-                
-                println(currentUserId)
-                
             }
         }
         
@@ -61,6 +64,12 @@ class StoryDetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        // hide toolbar for users not logged in
+        if currentUser == nil {
+            storyDetailToolbar.alpha = 0
+        }
+        
+        // query the story to display its information
         var queryStoryDetailData = PFQuery(className:"Story")
         queryStoryDetailData.whereKey("objectId", equalTo: objectID)
         queryStoryDetailData.findObjectsInBackgroundWithBlock{
