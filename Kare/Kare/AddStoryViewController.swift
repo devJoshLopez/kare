@@ -25,6 +25,8 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet var storyBodyInputField: UITextView!
     @IBOutlet var pickedImage: UIImageView!
     
+    var currentUser = PFUser.currentUser()
+    
     var imageSelected:Bool = false
     
     var imageLongitude = Double()
@@ -155,16 +157,18 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             
             println("latitude: \(imageLatitude) longitude: \(imageLongitude)")
             
-        // NEEDS FIX: The latitude and longitude are being set to 0 for some reason.
             println("imageLocation: \(imageLocation)")
+            
+            // create variable for current user id
+            var currentUserId = currentUser.objectId
         
             // Creates a story object to send to parse.com
             var story = PFObject(className:"Story")
-            story["storyLove"] = 0
-            story["storyCommentCount"] = 0
+            story["storyLove"] = [currentUserId]
+            story["storyCommentCount"] = "0"
             story["storyLocation"] = imageLocation
             story["storyDistanceFromUser"] = "miles away"
-            story["storyFlagCount"] = 0
+            story["storyFlagCount"] = "0"
             story["username"] = PFUser.currentUser()
             story["storyTitle"] = storyTitleInputField.text
             story["storyBody"] = storyBodyInputField.text

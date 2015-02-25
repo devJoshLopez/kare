@@ -22,11 +22,37 @@ class StoryDetailViewController: UIViewController {
     
     var objectID: String!
     
-    
-    
+    var currentUser = PFUser.currentUser()
     
     @IBAction func addHeartButton(sender: AnyObject) {
         
+        var queryStoryLove = PFQuery(className:"Story")
+        queryStoryLove.getObjectInBackgroundWithId(objectID) {
+            (story: PFObject!, error: NSError!) -> Void in
+            
+            if error != nil {
+                NSLog("%@", error)
+            } else {
+
+                var currentUserId = self.currentUser.objectId
+                var storyLove = story.objectForKey("storyLove") as NSMutableArray
+                
+                if !storyLove.containsObject(currentUserId) {
+                    storyLove.addObject(currentUserId)
+                    story.saveInBackground()
+                    self.storyLoveDetail.text = String(storyLove.count)
+                    println("added user to storyLove")
+                } else {
+                    storyLove.removeObject(currentUserId)
+                    story.saveInBackground()
+                    self.storyLoveDetail.text = String(storyLove.count)
+                    println(storyLove)
+                }
+                
+                println(currentUserId)
+                
+            }
+        }
         
     }
     
@@ -50,7 +76,11 @@ class StoryDetailViewController: UIViewController {
                     
                     let story:PFObject = object as PFObject
                     
-                    self.storyLoveDetail.text = story.objectForKey("storyLove") as? String
+                    // gets love count
+                    var querystoryLove = [story.objectForKey("storyLove")]
+                    var storyLoveCount = String(querystoryLove.count)
+                    self.storyLoveDetail.text = storyLoveCount
+                    
                     self.storyCommentsCountDetail.text = story.objectForKey("storyCommentCount") as? String
                     self.storyTitleDetail.text = story.objectForKey("storyTitle") as? String
                     self.comboDistanceDatestampDetail.text = "Distance & Datestamp"

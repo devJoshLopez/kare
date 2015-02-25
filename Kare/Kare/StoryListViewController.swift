@@ -150,7 +150,9 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         cell.storyTitlePreview.text = story.objectForKey("storyTitle") as? String
         
         // gets love count
-        cell.storyLovePreview.text = story.objectForKey("storyLove") as? String
+        var storyLove = [story.objectForKey("storyLove")]
+        var storyLoveCount = String(storyLove.count)
+        cell.storyLovePreview.text = storyLoveCount
         
         // gets comment count
         cell.storyCommentsCountPreview.text = story.objectForKey("storyCommentCount") as? String
