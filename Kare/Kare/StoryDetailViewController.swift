@@ -52,7 +52,8 @@ class StoryDetailViewController: UIViewController {
                         println("removed user from storyLove")
                     }
                     story.saveInBackground()
-                    self.storyLoveDetail.text = String(storyLove.count)
+                    story.fetch()
+                    self.storyLoveDetail.text = String(storyLove.count - 1)
                 }
             }
         }
@@ -86,8 +87,8 @@ class StoryDetailViewController: UIViewController {
                     let story:PFObject = object as PFObject
                     
                     // gets love count
-                    var querystoryLove = [story.objectForKey("storyLove")]
-                    var storyLoveCount = String(querystoryLove.count)
+                    var querystoryLove: AnyObject! = story.objectForKey("storyLove")
+                    var storyLoveCount = String(querystoryLove.count - 1)
                     self.storyLoveDetail.text = storyLoveCount
                     
                     self.storyCommentsCountDetail.text = story.objectForKey("storyCommentCount") as? String
