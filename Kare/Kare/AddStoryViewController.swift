@@ -18,7 +18,7 @@ var storyId = String()
 
 
 
-class AddStoryViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class AddStoryViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
 
     @IBOutlet var storyTitleInputField: UITextField!
@@ -27,7 +27,11 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     var currentUser = PFUser.currentUser()
     
+    var currentDeviceLocation = CLLocationManager()
+    
     var imageSelected:Bool = false
+    
+    var imageLocation = PFGeoPoint()
     
     var imageLongitude = Double()
     var imageLatitude = Double()
@@ -47,7 +51,25 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     
     
-    // Function to show alert controller
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        println("locations = \(locations)")
+        
+        if locations.count > 0 {
+            self.currentDeviceLocation.stopUpdatingLocation()
+        }
+        
+        var currentDeviceLocation = locations[0] as CLLocation
+        println("currentDeviceLocation = \(currentDeviceLocation)")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println(error)
+    }
+    
+    
+    
+    
+    // Function to show basic alert controller
     func displayAlert(title:String, error:String) {
         
         var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
@@ -61,6 +83,37 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             self.presentViewController(alert, animated: true, completion: nil)
         
     }
+    
+    // Function to show location alert controller
+    func displayLocationAlert(title:String, error:String) {
+        
+        var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { action in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { action in
+            
+            //get current location of user and add to story location
+            
+            self.imageLocation = PFGeoPoint(latitude: self.currentDeviceLocation.location.coordinate.latitude, longitude: self.currentDeviceLocation.location.coordinate.longitude)
+            
+            println("imageLocation = \(self.imageLocation)")
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }))
+        
+        
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
         self.dismissViewControllerAnimated(true, completion: nil);
@@ -89,10 +142,13 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
                 // this is showing that it has longitude and latitude
                 println("image longitude: \(self.imageLongitude) image latitude: \(self.imageLatitude)")
                 
+                self.imageLocation = PFGeoPoint(latitude: self.imageLatitude, longitude: self.imageLongitude)
+                
             } else {
                 
                 // TO DO: Need to ask user if no location is found in image if they would like to use current location instead.
-                self.displayAlert("Location Required!", error: "We could not find location info in your image. Would you like to use your current location instead?")
+                self.displayLocationAlert("Location Required!", error: "We could not find location info in your image. Would you like to use your current location instead?")
+                self.currentDeviceLocation.startUpdatingLocation()
             }
             }, failureBlock: {
                 (error: NSError!) in
@@ -153,11 +209,11 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
-            let imageLocation:PFGeoPoint = PFGeoPoint(latitude: imageLatitude, longitude: imageLongitude)
+            // let imageLocation:PFGeoPoint = PFGeoPoint(latitude: imageLatitude, longitude: imageLongitude)
             
             println("latitude: \(imageLatitude) longitude: \(imageLongitude)")
             
-            println("imageLocation: \(imageLocation)")
+            println("imageLocation: \(self.imageLocation)")
             
             // create variable for current user id
             var currentUserId = currentUser.objectId
@@ -166,7 +222,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             var story = PFObject(className:"Story")
             story["storyLove"] = [currentUserId]
             story["storyCommentCount"] = "0"
-            story["storyLocation"] = imageLocation
+            story["storyLocation"] = self.imageLocation
             story["storyDistanceFromUser"] = "miles away"
             story["storyFlagCount"] = "0"
             story["username"] = PFUser.currentUser()
@@ -231,6 +287,10 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         super.viewDidLoad()
             
         // Do any additional setup after loading the view.
+        
+        currentDeviceLocation.delegate = self
+        currentDeviceLocation.desiredAccuracy = kCLLocationAccuracyBest
+        currentDeviceLocation.requestWhenInUseAuthorization()
             
         imageSelected = false
         pickedImage.alpha = 0
