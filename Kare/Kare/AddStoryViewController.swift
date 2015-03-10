@@ -120,10 +120,12 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         
         println("Image Selected")
         imageSelected = true
-        self.pickedImage.alpha = 1
+        // self.pickedImage.alpha = 1
         
         let selectedImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        self.pickedImage.contentMode = UIViewContentMode.ScaleAspectFill
         self.pickedImage.image = selectedImage
+        
         
         let library = ALAssetsLibrary()
         var url: NSURL = info.objectForKey(UIImagePickerControllerReferenceURL) as NSURL
@@ -262,7 +264,8 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
                         
                         self.storyBodyInputField.placeholder = "Share another story...      "
                         self.storyTitleInputField.text = ""
-                        self.pickedImage.image = nil
+                        self.pickedImage.image = UIImage(named: "Camera Icon")
+                        self.pickedImage.contentMode = UIViewContentMode.Center
                         self.storyBodyInputField.text = nil
                         
                         // Go back to story list view
@@ -293,7 +296,9 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         currentDeviceLocation.requestWhenInUseAuthorization()
             
         imageSelected = false
-        pickedImage.alpha = 0
+        // pickedImage.alpha = 0
+        pickedImage.image = UIImage(named: "Camera Icon")
+        pickedImage.contentMode = UIViewContentMode.Center
         
         println("Add Story View Did Load")
         
