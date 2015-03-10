@@ -18,7 +18,7 @@ var storyId = String()
 
 
 
-class AddStoryViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
+class AddStoryViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate, UITextViewDelegate {
 
 
     @IBOutlet var storyTitleInputField: UITextField!
@@ -40,6 +40,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     
     
+    
     // Dismisses the keyboard if touch event outside the textfield
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
@@ -47,6 +48,16 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         self.storyBodyInputField.resignFirstResponder()
         
     }
+    
+    
+    
+    
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        println("tada")
+    }
+    
+    
     
     
     
@@ -112,6 +123,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         self.presentViewController(alert, animated: true, completion: nil)
         
     }
+
     
     
     
@@ -294,6 +306,8 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         currentDeviceLocation.delegate = self
         currentDeviceLocation.desiredAccuracy = kCLLocationAccuracyBest
         currentDeviceLocation.requestWhenInUseAuthorization()
+        
+        self.storyBodyInputField.delegate = self
             
         imageSelected = false
         // pickedImage.alpha = 0
@@ -308,6 +322,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         storyBodyInputField.clipsToBounds = true
         
         self.storyBodyInputField.placeholder = "Tell everyone your story...      "
+        
         
         }
     

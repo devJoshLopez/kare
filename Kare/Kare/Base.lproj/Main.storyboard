@@ -51,8 +51,6 @@
             <string>Nunito-Regular</string>
             <string>Nunito-Regular</string>
             <string>Nunito-Regular</string>
-            <string>Nunito-Regular</string>
-            <string>Nunito-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -164,7 +162,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-2l-dCk">
-                                <rect key="frame" x="10" y="393" width="355" height="100"/>
+                                <rect key="frame" x="10" y="393" width="355" height="198"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.91372549020000005" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="dBS-Ej-Tvm"/>
@@ -172,10 +170,18 @@
                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dBS-Ej-Tvm"/>
+                                    </mask>
+                                </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-Jy-CLd">
-                                <rect key="frame" x="10" y="513" width="355" height="46"/>
+                                <rect key="frame" x="10" y="611" width="355" height="46"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="v3H-C5-5it"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                 <state key="normal" title="Submit Your Story">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -185,18 +191,6 @@
                                     <action selector="sendStoryButton:" destination="h60-Yk-GQe" eventType="touchUpInside" id="Dmk-Hx-fkb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0e-z1-eZh">
-                                <rect key="frame" x="10" y="607" width="355" height="20"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
-                                <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUt-ZJ-JLj">
-                                <rect key="frame" x="10" y="637" width="355" height="20"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
-                                <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Your Story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiI-97-vEi">
                                 <rect key="frame" x="10" y="74" width="355" height="34"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
@@ -215,31 +209,24 @@
                         <constraints>
                             <constraint firstItem="tzw-2l-dCk" firstAttribute="leading" secondItem="fnt-kA-wZf" secondAttribute="leading" constant="10" id="8QX-Qn-boR"/>
                             <constraint firstAttribute="trailing" secondItem="tzw-2l-dCk" secondAttribute="trailing" constant="10" id="CsM-lv-tm0"/>
-                            <constraint firstAttribute="bottom" secondItem="FUt-ZJ-JLj" secondAttribute="bottom" constant="10" id="DAL-em-tay"/>
                             <constraint firstAttribute="centerX" secondItem="tzw-2l-dCk" secondAttribute="centerX" id="DJA-HL-jr8"/>
                             <constraint firstAttribute="centerX" secondItem="vT4-vl-odE" secondAttribute="centerX" id="E4b-fX-Id2"/>
                             <constraint firstItem="iPF-5k-O2l" firstAttribute="top" secondItem="JiI-97-vEi" secondAttribute="bottom" constant="25" id="I2I-tw-ReT"/>
                             <constraint firstItem="JiI-97-vEi" firstAttribute="top" secondItem="rt9-sP-sah" secondAttribute="bottom" constant="10" id="Jml-HP-Twy"/>
-                            <constraint firstItem="FUt-ZJ-JLj" firstAttribute="top" secondItem="b0e-z1-eZh" secondAttribute="bottom" constant="10" id="KOk-CE-0Fa"/>
                             <constraint firstItem="JiI-97-vEi" firstAttribute="leading" secondItem="fnt-kA-wZf" secondAttribute="leading" constant="10" id="Luf-1U-HZh"/>
+                            <constraint firstItem="xnO-B2-OFE" firstAttribute="top" secondItem="4fX-Jy-CLd" secondAttribute="bottom" constant="10" id="NLs-G8-Au9"/>
                             <constraint firstItem="JiI-97-vEi" firstAttribute="top" secondItem="fnt-kA-wZf" secondAttribute="top" constant="10" id="PH3-P9-YbJ"/>
                             <constraint firstAttribute="trailing" secondItem="iPF-5k-O2l" secondAttribute="trailing" constant="10" id="QqT-fj-8tg"/>
-                            <constraint firstItem="b0e-z1-eZh" firstAttribute="leading" secondItem="fnt-kA-wZf" secondAttribute="leading" constant="10" id="RMi-HT-X56"/>
                             <constraint firstItem="vT4-vl-odE" firstAttribute="centerX" secondItem="uRM-y3-9eS" secondAttribute="centerX" id="Rf0-50-zzI"/>
                             <constraint firstAttribute="trailing" secondItem="JiI-97-vEi" secondAttribute="trailing" constant="10" id="ZV0-39-jpZ"/>
                             <constraint firstAttribute="centerX" secondItem="JiI-97-vEi" secondAttribute="centerX" id="ZbO-bw-on6"/>
                             <constraint firstItem="tzw-2l-dCk" firstAttribute="top" secondItem="vT4-vl-odE" secondAttribute="bottom" constant="10" id="Zns-uB-Rem"/>
-                            <constraint firstAttribute="trailing" secondItem="b0e-z1-eZh" secondAttribute="trailing" constant="10" id="c8r-7W-ntQ"/>
                             <constraint firstItem="vT4-vl-odE" firstAttribute="centerY" secondItem="uRM-y3-9eS" secondAttribute="centerY" id="h7y-bi-3cA"/>
-                            <constraint firstAttribute="centerX" secondItem="b0e-z1-eZh" secondAttribute="centerX" id="mxz-3q-Sod"/>
                             <constraint firstAttribute="centerX" secondItem="iPF-5k-O2l" secondAttribute="centerX" id="nMj-Ih-60Z"/>
                             <constraint firstItem="uRM-y3-9eS" firstAttribute="top" secondItem="iPF-5k-O2l" secondAttribute="bottom" constant="10" id="pkX-tR-Qwe"/>
                             <constraint firstAttribute="trailing" secondItem="4fX-Jy-CLd" secondAttribute="trailing" constant="10" id="pzZ-2M-djw"/>
                             <constraint firstAttribute="centerX" secondItem="4fX-Jy-CLd" secondAttribute="centerX" id="qTo-Qz-E6l"/>
                             <constraint firstItem="4fX-Jy-CLd" firstAttribute="top" secondItem="tzw-2l-dCk" secondAttribute="bottom" constant="20" id="skP-Zx-1kS"/>
-                            <constraint firstAttribute="trailing" secondItem="FUt-ZJ-JLj" secondAttribute="trailing" constant="10" id="xLc-xI-jNG"/>
-                            <constraint firstItem="FUt-ZJ-JLj" firstAttribute="leading" secondItem="fnt-kA-wZf" secondAttribute="leading" constant="10" id="xWE-lt-cnK"/>
-                            <constraint firstAttribute="centerX" secondItem="FUt-ZJ-JLj" secondAttribute="centerX" id="y0V-qR-ZAk"/>
                             <constraint firstItem="4fX-Jy-CLd" firstAttribute="leading" secondItem="fnt-kA-wZf" secondAttribute="leading" constant="10" id="y7f-1L-10L"/>
                             <constraint firstItem="iPF-5k-O2l" firstAttribute="leading" secondItem="fnt-kA-wZf" secondAttribute="leading" constant="10" id="zFC-GL-XjS"/>
                         </constraints>
