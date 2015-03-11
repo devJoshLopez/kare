@@ -25,6 +25,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet var storyBodyInputField: UITextView!
     @IBOutlet var pickedImage: UIImageView!
     
+    
     var currentUser = PFUser.currentUser()
     
     var currentDeviceLocation = CLLocationManager()
@@ -49,12 +50,29 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         
     }
     
+    // animates moving of the view
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        var movementDuration:NSTimeInterval = 0.3
+        var movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
+        UIView.commitAnimations()
+    }
     
     
     
-    
-    func textViewDidBeginEditing(textView: UITextView) {
+    // moves viewcontroller up when editing body input field
+    func textViewDidBeginEditing(storyBodyInputField: UITextView) {
         println("tada")
+        storyBodyInputField.updateConstraints()
+        animateViewMoving(true, moveValue: 225)
+    }
+    
+    func textViewDidEndEditing(storyBodyInputField: UITextView) {
+        println("tada2")
+        animateViewMoving(false, moveValue: 225)
     }
     
     
@@ -200,7 +218,11 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             
             error = "Please select an image."
             
-        } else if (storyBodyInputField.text == "") {
+        } else if (self.imageLocation.latitude == 0) {
+            
+            error = "Locations are required so we can calculate distance for users."
+            
+        }else if (storyBodyInputField.text == "") {
             
             error = "Please tell everyone your story."
             
@@ -274,7 +296,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
                         
                         self.imageSelected = false
                         
-                        self.storyBodyInputField.placeholder = "Share another story...      "
+                        // self.storyBodyInputField.placeholder = "Share another story...      "
                         self.storyTitleInputField.text = ""
                         self.pickedImage.image = UIImage(named: "Camera Icon")
                         self.pickedImage.contentMode = UIViewContentMode.Center
@@ -307,8 +329,8 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         currentDeviceLocation.desiredAccuracy = kCLLocationAccuracyBest
         currentDeviceLocation.requestWhenInUseAuthorization()
         
-        self.storyBodyInputField.delegate = self
-            
+        storyBodyInputField.delegate = self
+        
         imageSelected = false
         // pickedImage.alpha = 0
         pickedImage.image = UIImage(named: "Camera Icon")
@@ -321,7 +343,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         storyBodyInputField.layer.borderWidth = 0.5
         storyBodyInputField.clipsToBounds = true
         
-        self.storyBodyInputField.placeholder = "Tell everyone your story...      "
+        // self.storyBodyInputField.placeholder = "Tell everyone your story...      "
         
         
         }
