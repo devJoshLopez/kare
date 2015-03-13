@@ -25,9 +25,6 @@ class StoryDetailViewController: UIViewController {
     
     var currentUser = PFUser.currentUser()
     
-    var currentUserLocation = PFGeoPoint()
-    
-    
     @IBAction func addHeartButton(sender: AnyObject) {
         
         // query the story
@@ -68,15 +65,13 @@ class StoryDetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        // get location of current user
-        PFGeoPoint.geoPointForCurrentLocationInBackground {
-            (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
-            if error == nil {
-                // do something with the new geoPoint
-                self.currentUserLocation = geoPoint
-                println("current user location = \(self.currentUserLocation)")
-            }
-        }
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
         
         // hide toolbar for users not logged in
         if currentUser == nil {
@@ -106,8 +101,8 @@ class StoryDetailViewController: UIViewController {
                     
                     // get story location and get the distance between story and user
                     var storyLocation:PFGeoPoint = story.objectForKey("storyLocation") as PFGeoPoint
-                    println("story location = \(storyLocation)")
-                    var locationDistance = Int(self.currentUserLocation.distanceInMilesTo(storyLocation))
+                    println("Story Location: \(storyLocation)")
+                    var locationDistance = Int(deviceLocation.distanceInMilesTo(storyLocation))
                     
                     self.storyCommentsCountDetail.text = story.objectForKey("storyCommentCount") as? String
                     self.storyTitleDetail.text = story.objectForKey("storyTitle") as? String
@@ -151,13 +146,6 @@ class StoryDetailViewController: UIViewController {
             }
         }
 
-    }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
 
     }
 

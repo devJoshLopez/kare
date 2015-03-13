@@ -12,10 +12,10 @@
 		553A36F01A786CE3008DD43D /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36EB1A786CE3008DD43D /* ParseCrashReporting.framework */; };
 		553A36F11A786CE3008DD43D /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36EC1A786CE3008DD43D /* ParseFacebookUtils.framework */; };
 		553A36F21A786CE3008DD43D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553A36ED1A786CE3008DD43D /* ParseUI.framework */; };
+		5552C29C1AB27D3800F0EC15 /* StoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552C29B1AB27D3800F0EC15 /* StoryListTableViewCell.swift */; };
 		55C0742F1A6C649500F6BF94 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0742E1A6C649500F6BF94 /* RegisterViewController.swift */; };
 		55C074311A6C8E3B00F6BF94 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C074301A6C8E3B00F6BF94 /* ForgotViewController.swift */; };
 		55C074331A6C9E8200F6BF94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C074321A6C9E8200F6BF94 /* LoginViewController.swift */; };
-		55C0D9A61A719BA8002A8A5B /* StoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0D9A51A719BA8002A8A5B /* StoryListTableViewCell.swift */; };
 		55C0D9A81A71AB9E002A8A5B /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C0D9A71A71AB9E002A8A5B /* libstdc++.6.dylib */; };
 		55C2A4281A606B10003907FD /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55C2A4251A606B10003907FD /* Nunito-Bold.ttf */; };
 		55C2A4291A606B10003907FD /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55C2A4261A606B10003907FD /* Nunito-Light.ttf */; };
@@ -63,10 +63,10 @@
 		553A36EB1A786CE3008DD43D /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		553A36EC1A786CE3008DD43D /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		553A36ED1A786CE3008DD43D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		5552C29B1AB27D3800F0EC15 /* StoryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListTableViewCell.swift; sourceTree = "<group>"; };
 		55C0742E1A6C649500F6BF94 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		55C074301A6C8E3B00F6BF94 /* ForgotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
 		55C074321A6C9E8200F6BF94 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		55C0D9A51A719BA8002A8A5B /* StoryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListTableViewCell.swift; sourceTree = "<group>"; };
 		55C0D9A71A71AB9E002A8A5B /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		55C2A4251A606B10003907FD /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		55C2A4261A606B10003907FD /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
@@ -191,12 +191,12 @@
 			isa = PBXGroup;
 			children = (
 				55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */,
+				55F0FAF01A5EFBBE002F2601 /* Main.storyboard */,
+				55C7C53F1A64717000D9C38A /* StoryListViewController.swift */,
+				5552C29B1AB27D3800F0EC15 /* StoryListTableViewCell.swift */,
+				55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */,
 				55C414C81A7588B80086B4F7 /* PageViewController.swift */,
 				55C7C5431A64723600D9C38A /* MenuViewController.swift */,
-				55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */,
-				55C7C53F1A64717000D9C38A /* StoryListViewController.swift */,
-				55C0D9A51A719BA8002A8A5B /* StoryListTableViewCell.swift */,
-				55F0FAF01A5EFBBE002F2601 /* Main.storyboard */,
 				55C074321A6C9E8200F6BF94 /* LoginViewController.swift */,
 				55C0742E1A6C649500F6BF94 /* RegisterViewController.swift */,
 				55C074301A6C8E3B00F6BF94 /* ForgotViewController.swift */,
@@ -367,7 +367,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C5BF201A6AEA42003339C6 /* AddStoryViewController.swift in Sources */,
-				55C0D9A61A719BA8002A8A5B /* StoryListTableViewCell.swift in Sources */,
 				55C414C91A7588B80086B4F7 /* PageViewController.swift in Sources */,
 				55C7C5441A64723600D9C38A /* MenuViewController.swift in Sources */,
 				55C92F7B1A73721E00542BA8 /* UITextView+placeholder.swift in Sources */,
@@ -376,6 +375,7 @@
 				55C074331A6C9E8200F6BF94 /* LoginViewController.swift in Sources */,
 				55C074311A6C8E3B00F6BF94 /* ForgotViewController.swift in Sources */,
 				55C7C5401A64717000D9C38A /* StoryListViewController.swift in Sources */,
+				5552C29C1AB27D3800F0EC15 /* StoryListTableViewCell.swift in Sources */,
 				55F0FAED1A5EFBBE002F2601 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

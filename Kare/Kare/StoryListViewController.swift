@@ -7,23 +7,24 @@
 //
 
 import UIKit
+import Foundation
 
+var deviceLocation = PFGeoPoint()
 
 class StoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet var navigationBar: UINavigationItem!
-    @IBOutlet var dynamicBarButtonItem: UIBarButtonItem!
     
+    @IBOutlet var dynamicBarButtonItem: UIBarButtonItem!
     @IBOutlet var storySegmentedControl: UISegmentedControl!
     @IBOutlet var distanceSliderLabel: UILabel!
     @IBOutlet var distanceSlider: UISlider!
-    
     @IBOutlet var storyTableView: UITableView!
     @IBOutlet var loginOrAddButton: UIBarButtonItem!
-    
     @IBOutlet var storyTableViewTopConstraint: NSLayoutConstraint!
+    
    
     var storyListViewData:NSMutableArray = NSMutableArray()
+    
+    var refreshControl = UIRefreshControl()
     
     
     // remove all stories and then reload them from parse.com
@@ -102,9 +103,6 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidAppear(animated: Bool) {
         
-        // reload the story data
-        self.loadStoryData()
-        
     }
     
     
@@ -115,6 +113,22 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.storyTableView.dataSource = self
         self.storyTableView.delegate = self
+        
+        // get location of current user
+        PFGeoPoint.geoPointForCurrentLocationInBackground {
+            (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
+            
+            if error != nil {
+                NSLog("%@", error)
+            } else {
+                // do something with the new geoPoint
+                deviceLocation = geoPoint
+                println("Device Location: \(deviceLocation)")
+            }
+        }
+        
+        // reload the story data
+        self.loadStoryData()
         
     }
 
@@ -142,25 +156,37 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     
     // Delegate method for storyTableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell:StoryListTableViewCell = tableView.dequeueReusableCellWithIdentifier("storyCell", forIndexPath: indexPath) as StoryListTableViewCell
+        
+        // hide all cell content so it can fade in
+        cell.cellStoryTitle.alpha = 0
+        cell.cellStoryImage.alpha = 0
+        cell.cellStoryBeats.alpha = 0
+        cell.cellStoryCommentsCount.alpha = 0
+        cell.cellStoryAuthor.alpha = 0
+        cell.cellStoryDistance.alpha = 0
+        cell.cellStoryDateAdded.alpha = 0
         
         let story:PFObject = self.storyListViewData.objectAtIndex(indexPath.row) as PFObject
         
         // gets the story title
-        cell.storyTitlePreview.text = story.objectForKey("storyTitle") as? String
-        
-        // gets love count
+        cell.cellStoryTitle.text = story.objectForKey("storyTitle") as? String
         
         // gets love count
         var storyLove: AnyObject! = story.objectForKey("storyLove")
         var storyLoveCount = String(storyLove.count - 1)
-        cell.storyLovePreview.text = storyLoveCount
+        cell.cellStoryBeats.text = storyLoveCount
         
         // gets comment count
-        cell.storyCommentsCountPreview.text = story.objectForKey("storyCommentCount") as? String
+        cell.cellStoryCommentsCount.text = story.objectForKey("storyCommentCount") as? String
+        
+        // get story location and get the distance between story and user
+        var storyLocation:PFGeoPoint = story.objectForKey("storyLocation") as PFGeoPoint
         
         // gets distance from user
-        cell.storyDistancePreview.text = story.objectForKey("storyDistanceFromUser") as? String
+        var locationDistance = Int(deviceLocation.distanceInMilesTo(storyLocation))
+        cell.cellStoryDistance.text = "\(locationDistance) miles"
         
         // This gets the author of the story
         var findStoryAuthor: PFQuery = PFUser.query()
@@ -172,7 +198,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
             if !(error != nil){
                 
                 let user:PFUser = (objects as NSArray).lastObject as PFUser
-                cell.storyAuthorPreview.text = "by \(user.username)"
+                cell.cellStoryAuthor.text = "by \(user.username)"
 
             }
         }
@@ -181,7 +207,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         // TODO: make the date like twitter.
         var storyDateFormatter:NSDateFormatter = NSDateFormatter()
         storyDateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        cell.storyDatestampPreview.text = storyDateFormatter.stringFromDate(story.createdAt)
+        cell.cellStoryDateAdded.text = storyDateFormatter.stringFromDate(story.createdAt)
         
         // gets the storyimage
         let storyImagePreview:PFFile = story["storyImage"] as PFFile
@@ -191,9 +217,20 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
             
             if !(error != nil){
                 let image:UIImage = UIImage(data: imageData)!
-                cell.storyImagePreview.image = image
+                cell.cellStoryImage.image = image
             }
         }
+        
+        // fade in animation
+        UIView.animateWithDuration(0.5, animations: {
+            cell.cellStoryTitle.alpha = 1
+            cell.cellStoryImage.alpha = 1
+            cell.cellStoryBeats.alpha = 1
+            cell.cellStoryCommentsCount.alpha = 1
+            cell.cellStoryAuthor.alpha = 1
+            cell.cellStoryDistance.alpha = 1
+            cell.cellStoryDateAdded.alpha = 1
+        })
         
         return cell
     }

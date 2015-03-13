@@ -2,26 +2,22 @@
 //  StoryListTableViewCell.swift
 //  Kare
 //
-//  Created by Josh Lopez on 1/22/15.
+//  Created by Josh Lopez on 3/12/15.
 //  Copyright (c) 2015 Josh Lopez. All rights reserved.
 //
 
 import UIKit
 
 class StoryListTableViewCell: UITableViewCell {
+    
+    @IBOutlet var cellStoryImage: UIImageView!
+    @IBOutlet var cellStoryBeats: UILabel!
+    @IBOutlet var cellStoryCommentsCount: UILabel!
+    @IBOutlet var cellStoryTitle: UILabel!
+    @IBOutlet var cellStoryAuthor: UILabel!
+    @IBOutlet var cellStoryDistance: UILabel!
+    @IBOutlet var cellStoryDateAdded: UILabel!
 
-    
-    @IBOutlet var storyImagePreview: UIImageView!
-    @IBOutlet var storyLovePreview: UILabel!
-    @IBOutlet var storyCommentsCountPreview: UILabel!
-    @IBOutlet var storyTitlePreview: UILabel!
-    @IBOutlet var storyAuthorPreview: UILabel!
-    @IBOutlet var storyDistancePreview: UILabel!
-    @IBOutlet var storyDatestampPreview: UILabel!
-    
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,5 +29,4 @@ class StoryListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-
 }

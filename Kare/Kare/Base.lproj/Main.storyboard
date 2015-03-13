@@ -284,21 +284,20 @@
                                 <color key="separatorColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="storyCell" rowHeight="110" id="iZb-bm-FIG" customClass="StoryListTableViewCell" customModule="Kare" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="storyCell" rowHeight="110" id="iZb-bm-FIG" customClass="StoryListTableViewCell" customModule="Kare" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iZb-bm-FIG" id="tPD-jb-HVV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K4A-ws-GYB">
                                                     <rect key="frame" x="10" y="10" width="120" height="90"/>
-                                                    <color key="backgroundColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="COO-vX-Ox9"/>
                                                         <constraint firstAttribute="width" constant="120" id="GOR-uA-Uw3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSH-nR-UDO">
-                                                    <rect key="frame" x="167" y="12" width="29" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSH-nR-UDO">
+                                                    <rect key="frame" x="167" y="12" width="35" height="18"/>
                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                     <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -309,8 +308,8 @@
                                                     <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datestamp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-0v-4ge">
-                                                    <rect key="frame" x="298" y="86" width="67" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-0v-4ge">
+                                                    <rect key="frame" x="336" y="86" width="29" height="18"/>
                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                     <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -321,7 +320,7 @@
                                                     <color key="textColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfP-rd-2DK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfP-rd-2DK">
                                                     <rect key="frame" x="140" y="57" width="225" height="20"/>
                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                     <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -376,13 +375,13 @@
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="storyAuthorPreview" destination="dfP-rd-2DK" id="ENO-Kz-eCn"/>
-                                            <outlet property="storyCommentsCountPreview" destination="Qk6-TJ-CIj" id="DX7-rc-GxI"/>
-                                            <outlet property="storyDatestampPreview" destination="3yo-0v-4ge" id="Fev-Co-yNH"/>
-                                            <outlet property="storyDistancePreview" destination="TeB-qm-yXi" id="NxB-CW-L1T"/>
-                                            <outlet property="storyImagePreview" destination="K4A-ws-GYB" id="s3J-Tf-PcO"/>
-                                            <outlet property="storyLovePreview" destination="aSH-nR-UDO" id="WXS-4Z-yMn"/>
-                                            <outlet property="storyTitlePreview" destination="Qzu-Sg-W7o" id="vGD-iE-rl6"/>
+                                            <outlet property="cellStoryAuthor" destination="dfP-rd-2DK" id="nPt-kf-ID3"/>
+                                            <outlet property="cellStoryBeats" destination="aSH-nR-UDO" id="aEX-ch-bHv"/>
+                                            <outlet property="cellStoryCommentsCount" destination="Qk6-TJ-CIj" id="p7E-WJ-mmq"/>
+                                            <outlet property="cellStoryDateAdded" destination="3yo-0v-4ge" id="kcK-uk-YdO"/>
+                                            <outlet property="cellStoryDistance" destination="TeB-qm-yXi" id="eA6-Jg-xry"/>
+                                            <outlet property="cellStoryImage" destination="K4A-ws-GYB" id="mRF-RK-h6W"/>
+                                            <outlet property="cellStoryTitle" destination="Qzu-Sg-W7o" id="uDb-cc-MqT"/>
                                             <segue destination="VB9-7G-Bf9" kind="show" identifier="storyDetailSegue" id="DQd-QS-f6A"/>
                                         </connections>
                                     </tableViewCell>
@@ -424,7 +423,6 @@
                         <outlet property="distanceSliderLabel" destination="d5W-Hl-StQ" id="quF-NR-weg"/>
                         <outlet property="dynamicBarButtonItem" destination="xXN-Zw-nu6" id="EaF-mm-ACj"/>
                         <outlet property="loginOrAddButton" destination="xXN-Zw-nu6" id="QSe-27-der"/>
-                        <outlet property="navigationBar" destination="y5a-HB-ohv" id="ers-RW-A1s"/>
                         <outlet property="storySegmentedControl" destination="C4a-B7-jo3" id="Fmf-QN-BKm"/>
                         <outlet property="storyTableView" destination="7Ok-JI-JDe" id="YHr-8T-jmA"/>
                         <outlet property="storyTableViewTopConstraint" destination="ed8-u1-gw5" id="Ytr-gF-5tw"/>
@@ -877,8 +875,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-Ua-MDm">
-                                <rect key="frame" x="37" y="76" width="29" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-Ua-MDm">
+                                <rect key="frame" x="37" y="76" width="35" height="18"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -895,7 +893,7 @@
                                 <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDF-aw-6F7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDF-aw-6F7">
                                 <rect key="frame" x="10" y="133" width="355" height="20"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                 <color key="textColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -904,7 +902,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart Label Icon" translatesAutoresizingMaskIntoConstraints="NO" id="1Kq-5W-F5j">
                                 <rect key="frame" x="10" y="74" width="22" height="20"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance &amp; Datestamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h4-QS-ezh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance &amp; Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h4-QS-ezh">
                                 <rect key="frame" x="10" y="163" width="355" height="18"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -912,7 +910,6 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yIb-15-Cum">
                                 <rect key="frame" x="38" y="191" width="300" height="200"/>
-                                <color key="backgroundColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Khx-mG-TWI"/>
                                     <constraint firstAttribute="width" constant="300" id="gbd-UH-Tnd"/>

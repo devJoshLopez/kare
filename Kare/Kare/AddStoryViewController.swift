@@ -259,7 +259,6 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             story["storyLove"] = [currentUserId]
             story["storyCommentCount"] = "0"
             story["storyLocation"] = self.imageLocation
-            story["storyDistanceFromUser"] = "miles away"
             story["storyFlagCount"] = "0"
             story["username"] = PFUser.currentUser()
             story["storyTitle"] = storyTitleInputField.text
