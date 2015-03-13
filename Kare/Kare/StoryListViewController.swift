@@ -24,7 +24,40 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
    
     var storyListViewData:NSMutableArray = NSMutableArray()
     
-    var refreshControl = UIRefreshControl()
+    var refresh = UIRefreshControl()
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.storyTableView.dataSource = self
+        self.storyTableView.delegate = self
+        
+        // get location of current user
+        PFGeoPoint.geoPointForCurrentLocationInBackground {
+            (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
+            
+            if error != nil {
+                NSLog("%@", error)
+            } else {
+                // do something with the new geoPoint
+                deviceLocation = geoPoint
+                println("Device Location: \(deviceLocation)")
+            }
+        }
+        
+        // reload the story data
+        self.loadStoryData()
+        
+        // pull to refresh
+        refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresh.addTarget(self, action: "loadStoryData", forControlEvents:.ValueChanged)
+        
+    }
+    
+    
     
     
     // remove all stories and then reload them from parse.com
@@ -54,6 +87,9 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
                 self.storyListViewData = NSMutableArray(array: array)
                 
                 self.storyTableView.reloadData()
+                
+                //to stop the refresh being displayed
+                self.refresh.endRefreshing()
             }
         }
     }
@@ -108,29 +144,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.storyTableView.dataSource = self
-        self.storyTableView.delegate = self
-        
-        // get location of current user
-        PFGeoPoint.geoPointForCurrentLocationInBackground {
-            (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
-            
-            if error != nil {
-                NSLog("%@", error)
-            } else {
-                // do something with the new geoPoint
-                deviceLocation = geoPoint
-                println("Device Location: \(deviceLocation)")
-            }
-        }
-        
-        // reload the story data
-        self.loadStoryData()
-        
-    }
+
 
 
     
