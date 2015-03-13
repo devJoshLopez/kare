@@ -24,13 +24,21 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
    
     var storyListViewData:NSMutableArray = NSMutableArray()
     
-    var refresh = UIRefreshControl()
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        return refreshControl
+        }()
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "methodOfReceivedNotification:", name:"NotificationIdentifier", object: nil)
+
         
         self.storyTableView.dataSource = self
         self.storyTableView.delegate = self
@@ -52,9 +60,29 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         self.loadStoryData()
         
         // pull to refresh
-        refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refresh.addTarget(self, action: "loadStoryData", forControlEvents:.ValueChanged)
+        self.storyTableView.addSubview(refreshControl)
         
+    }
+    
+    
+    
+    
+    func handleRefresh(control: UIRefreshControl) {
+        
+        // reload the story data
+        self.loadStoryData()
+        
+        println("Refreshing")
+        refreshControl.endRefreshing()
+    }
+    
+    
+    
+    func methodOfReceivedNotification(notification: NSNotification){
+        // reload the story data
+        dispatch_async(dispatch_get_main_queue(), {
+        self.loadStoryData()
+        })
     }
     
     
@@ -87,9 +115,6 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
                 self.storyListViewData = NSMutableArray(array: array)
                 
                 self.storyTableView.reloadData()
-                
-                //to stop the refresh being displayed
-                self.refresh.endRefreshing()
             }
         }
     }
@@ -133,21 +158,9 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         }
 
     }
-    
-    
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-    
-    
-    
-    
-
-
 
     
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

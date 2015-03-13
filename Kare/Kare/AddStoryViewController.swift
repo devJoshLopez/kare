@@ -212,6 +212,8 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func sendStoryButton(sender: AnyObject) {
         
+        self.storyBodyInputField.resignFirstResponder()
+        
         var error = ""
         
         if (imageSelected == false) {
@@ -308,6 +310,9 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
                         
                         println("added story successfully \(storyId)")
                         
+                        NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+
+                        
                     }
                 }
             }
@@ -321,7 +326,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         // Do any additional setup after loading the view.
         
         currentDeviceLocation.delegate = self

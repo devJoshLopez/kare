@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AudioToolbox
+import AVFoundation
 
 class StoryDetailViewController: UIViewController {
     
@@ -28,6 +30,7 @@ class StoryDetailViewController: UIViewController {
     @IBAction func addHeartButton(sender: AnyObject) {
         
         // query the story
+        // TODO: Need to redo this so if the user is the author it doesnt have to keep query the db and waste data
         var queryStoryLove = PFQuery(className:"Story")
         queryStoryLove.getObjectInBackgroundWithId(objectID) {
             (story: PFObject!, error: NSError!) -> Void in
@@ -42,20 +45,32 @@ class StoryDetailViewController: UIViewController {
                 
                 // do not allow the author of the story to love the story
                 if currentUserId != storyAuthor.objectId as NSString {
+                    
                     println("you are not the author")
+                    
                     if !storyLove.containsObject(currentUserId) {
+                        
                         storyLove.addObject(currentUserId)
                         println("added user to storyLove")
+                        
                     } else if storyLove.containsObject(currentUserId) {
+                        
                         storyLove.removeObject(currentUserId)
                         println("removed user from storyLove")
+
                     }
                     story.saveInBackground()
                     story.fetch()
                     self.storyLoveDetail.text = String(storyLove.count - 1)
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 }
             }
         }
+        
+        // Grab the path, make sure to add it to your project!
+//        var heartBeat = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heartbeat", ofType: "wav")!)
+//        var audioPlayer = AVAudioPlayer()
+//        audioPlayer.play()
         
     }
     
@@ -157,7 +172,13 @@ class StoryDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    
+    
+    // TODO: Need to figure out how to reload the data on the storylistviewcontroller when a user touches the back button on this viewcontroller
+    // Warning: A long-running operation is being executed on the main thread.
+    deinit {
+        NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+    }
+    
 
 }
