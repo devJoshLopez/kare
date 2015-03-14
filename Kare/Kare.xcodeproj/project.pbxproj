@@ -30,6 +30,7 @@
 		55C7C5441A64723600D9C38A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7C5431A64723600D9C38A /* MenuViewController.swift */; };
 		55C92F7B1A73721E00542BA8 /* UITextView+placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */; };
 		55D1AE1C1AB35C0800E7EF36 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D1AE1B1AB35C0700E7EF36 /* AVFoundation.framework */; };
+		55D1AE1E1AB3A8AD00E7EF36 /* heartbeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55D1AE1D1AB3A8AD00E7EF36 /* heartbeat.wav */; };
 		55F0FAED1A5EFBBE002F2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */; };
 		55F0FAF21A5EFBBE002F2601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F0FAF01A5EFBBE002F2601 /* Main.storyboard */; };
 		55F0FAF41A5EFBBE002F2601 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F0FAF31A5EFBBE002F2601 /* Images.xcassets */; };
@@ -82,6 +83,7 @@
 		55C7C5431A64723600D9C38A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+placeholder.swift"; sourceTree = "<group>"; };
 		55D1AE1B1AB35C0700E7EF36 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		55D1AE1D1AB3A8AD00E7EF36 /* heartbeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat.wav; sourceTree = "<group>"; };
 		55F0FAE71A5EFBBE002F2601 /* Kare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F0FAEB1A5EFBBE002F2601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		55F0FAEA1A5EFBBE002F2601 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				55D1AE1D1AB3A8AD00E7EF36 /* heartbeat.wav */,
 				55F0FAEB1A5EFBBE002F2601 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -350,6 +353,7 @@
 				55C2A42A1A606B10003907FD /* Nunito-Regular.ttf in Resources */,
 				55F0FAF21A5EFBBE002F2601 /* Main.storyboard in Resources */,
 				55C2A4291A606B10003907FD /* Nunito-Light.ttf in Resources */,
+				55D1AE1E1AB3A8AD00E7EF36 /* heartbeat.wav in Resources */,
 				55F0FAF71A5EFBBE002F2601 /* LaunchScreen.xib in Resources */,
 				55C2A4281A606B10003907FD /* Nunito-Bold.ttf in Resources */,
 				55F0FAF41A5EFBBE002F2601 /* Images.xcassets in Resources */,

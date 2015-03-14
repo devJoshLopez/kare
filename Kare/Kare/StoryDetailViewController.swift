@@ -27,6 +27,8 @@ class StoryDetailViewController: UIViewController {
     
     var currentUser = PFUser.currentUser()
     
+    var audioPlayer:AVAudioPlayer = AVAudioPlayer()
+    
     @IBAction func addHeartButton(sender: AnyObject) {
         
         // query the story
@@ -51,6 +53,10 @@ class StoryDetailViewController: UIViewController {
                     if !storyLove.containsObject(currentUserId) {
                         
                         storyLove.addObject(currentUserId)
+                        
+                        // play heartbeat
+                        self.audioPlayer.play()
+                        
                         println("added user to storyLove")
                         
                     } else if storyLove.containsObject(currentUserId) {
@@ -60,18 +66,16 @@ class StoryDetailViewController: UIViewController {
 
                     }
                     story.saveInBackground()
-                    story.fetch()
+                    story.fetchInBackground()
                     self.storyLoveDetail.text = String(storyLove.count - 1)
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    
+                    // vibrates device
+                    // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    
+                    
                 }
             }
         }
-        
-        // Grab the path, make sure to add it to your project!
-//        var heartBeat = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heartbeat", ofType: "wav")!)
-//        var audioPlayer = AVAudioPlayer()
-//        audioPlayer.play()
-        
     }
     
     
@@ -85,6 +89,12 @@ class StoryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // create url path dor audio
+        let fileLocation = NSString(string:NSBundle.mainBundle().pathForResource("heartbeat", ofType: "wav")!)
+        var error: NSError? = nil
+        audioPlayer = AVAudioPlayer(contentsOfURL: NSURL(string: fileLocation), error: &error)
+        // audioPlayer.volume = 0.8
 
         // Do any additional setup after loading the view.
         
