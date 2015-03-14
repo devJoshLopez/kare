@@ -21,8 +21,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet var loginOrAddButton: UIBarButtonItem!
     @IBOutlet var storyTableViewTopConstraint: NSLayoutConstraint!
     
-   
-    var storyListViewData:NSMutableArray = NSMutableArray()
+    var storyListViewData = NSMutableArray()
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -30,6 +29,19 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         return refreshControl
         }()
+    
+    
+    
+    
+    func handleRefresh(control: UIRefreshControl) {
+        println("Refreshing")
+        
+        // reload the story data
+        self.loadStoryData()
+
+        
+       // refreshControl.endRefreshing()
+    }
     
     
     
@@ -61,20 +73,12 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         
         // pull to refresh
         self.storyTableView.addSubview(refreshControl)
-        
     }
     
     
     
     
-    func handleRefresh(control: UIRefreshControl) {
-        
-        // reload the story data
-        self.loadStoryData()
-        
-        println("Refreshing")
-        refreshControl.endRefreshing()
-    }
+
     
     
     
@@ -91,14 +95,15 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     // remove all stories and then reload them from parse.com
     func loadStoryData(){
         
-        storyListViewData.removeAllObjects()
+        self.storyListViewData.removeAllObjects()
+        println("Removed all objects: \(self.storyListViewData.count)")
         
         var findStoryListData = PFQuery(className:"Story")
         
         findStoryListData.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]!, error:NSError!) -> Void in
             
-            if !(error != nil) {
+            if error == nil {
                 
                 // The query succeeded/
                 println("Successfully retrieved \(objects.count) stories.")
@@ -115,6 +120,9 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
                 self.storyListViewData = NSMutableArray(array: array)
                 
                 self.storyTableView.reloadData()
+                println("Reload all objects: \(self.storyListViewData.count)")
+                
+                self.refreshControl.endRefreshing()
             }
         }
     }
@@ -175,6 +183,16 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         
         // return the number of sections
         return 1
+        
+    }
+    
+    
+    
+    
+    // Delegate method for storyTableView
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.storyListViewData.count
         
     }
     
@@ -260,16 +278,6 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         })
         
         return cell
-    }
-
-    
-    
-    
-    // Delegate method for storyTableView
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return storyListViewData.count
-        
     }
     
     
