@@ -29,6 +29,9 @@ class StoryDetailViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer = AVAudioPlayer()
     
+    
+    
+    
     @IBAction func addHeartButton(sender: AnyObject) {
         
         // query the story
@@ -81,12 +84,36 @@ class StoryDetailViewController: UIViewController {
     
     
     
-    
-    override func viewWillAppear(animated: Bool) {
+    @IBAction func addComment(sender: AnyObject) {
         
+        // alert controller to add comments
+        let addComment:UIAlertController = UIAlertController(title: "Add a Comment", message: "What did you feel from this story?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // trextfield
+        addComment.addTextFieldWithConfigurationHandler({
+            (textField:UITextField!) in
+            
+        })
+        
+        // add an alert action
+        let firstAlertAction:UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        // add an alert action
+        let secondAlertAction:UIAlertAction = UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+            
+            println("comment done")
+        })
+        
+        addComment.addAction(firstAlertAction)
+        addComment.addAction(secondAlertAction)
+        
+        // display alert to the user
+        self.presentViewController(addComment, animated: true, completion: nil)
     }
     
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -173,7 +200,7 @@ class StoryDetailViewController: UIViewController {
 
 
     }
-
+    
     
     
     
