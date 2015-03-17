@@ -34,51 +34,51 @@ class StoryDetailViewController: UIViewController {
     
     @IBAction func addHeartButton(sender: AnyObject) {
         
-        // query the story
-        // TODO: Need to redo this so if the user is the author it doesnt have to keep query the db and waste data
-        var queryStoryLove = PFQuery(className:"Story")
-        queryStoryLove.getObjectInBackgroundWithId(objectID) {
-            (story: PFObject!, error: NSError!) -> Void in
-            
-            if error != nil {
-                NSLog("%@", error)
-            } else {
-
-                var currentUserId = self.currentUser.objectId
-                var storyAuthor: AnyObject! = story.objectForKey("username")
-                var storyLove = story.objectForKey("storyLove") as NSMutableArray
-                
-                // do not allow the author of the story to love the story
-                if currentUserId != storyAuthor.objectId as NSString {
-                    
-                    println("you are not the author")
-                    
-                    if !storyLove.containsObject(currentUserId) {
-                        
-                        storyLove.addObject(currentUserId)
-                        
-                        // play heartbeat
-                        self.audioPlayer.play()
-                        
-                        println("added user to storyLove")
-                        
-                    } else if storyLove.containsObject(currentUserId) {
-                        
-                        storyLove.removeObject(currentUserId)
-                        println("removed user from storyLove")
-
-                    }
-                    story.saveInBackground()
-                    story.fetchInBackground()
-                    self.storyLoveDetail.text = String(storyLove.count - 1)
-                    
-                    // vibrates device
-                    // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    
-                    
-                }
-            }
-        }
+//        // query the story
+//        // TODO: Need to redo this so if the user is the author it doesnt have to keep query the db and waste data
+//        var queryStoryLove = PFQuery(className:"Story")
+//        queryStoryLove.getObjectInBackgroundWithId(objectID) {
+//            (story: PFObject!, error: NSError!) -> Void in
+//            
+//            if error != nil {
+//                NSLog("%@", error)
+//            } else {
+//
+//                var currentUserId = self.currentUser.objectId
+//                var storyAuthor: AnyObject! = story.objectForKey("username")
+//                var storyLove = story.objectForKey("storyLove") as NSMutableArray
+//                
+//                // do not allow the author of the story to love the story
+//                if currentUserId != storyAuthor.objectId as NSString {
+//                    
+//                    println("you are not the author")
+//                    
+//                    if !storyLove.containsObject(currentUserId) {
+//                        
+//                        storyLove.addObject(currentUserId)
+//                        
+//                        // play heartbeat
+//                        self.audioPlayer.play()
+//                        
+//                        println("added user to storyLove")
+//                        
+//                    } else if storyLove.containsObject(currentUserId) {
+//                        
+//                        storyLove.removeObject(currentUserId)
+//                        println("removed user from storyLove")
+//
+//                    }
+//                    story.saveInBackground()
+//                    story.fetchInBackground()
+//                    self.storyLoveDetail.text = String(storyLove.count - 1)
+//                    
+//                    // vibrates device
+//                    // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+//                    
+//                    
+//                }
+//            }
+//        }
     }
     
     
@@ -87,9 +87,12 @@ class StoryDetailViewController: UIViewController {
     @IBAction func addComment(sender: AnyObject) {
         
         // alert controller to add comments
-        let addComment:UIAlertController = UIAlertController(title: "Add a Comment", message: "What did you feel from this story?", preferredStyle: UIAlertControllerStyle.Alert)
+        let addComment:UIAlertController = UIAlertController(title: "Add a Comment", message: "What did you feel from this story?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        // trextfield
+        addComment.view.tintColor = UIColor(red:0.04, green:0.67, blue:0.56, alpha:1.0)
+        addComment.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.94, alpha:1.0)
+        
+        // textfield
         addComment.addTextFieldWithConfigurationHandler({
             (textField:UITextField!) in
             
@@ -197,8 +200,18 @@ class StoryDetailViewController: UIViewController {
                 println("Error: %@ %@", error, error.userInfo!)
             }
         }
-
-
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addCommentSegue" {
+            
+            presentingViewController?.providesPresentationContextTransitionStyle = true
+            presentingViewController?.definesPresentationContext = true
+            presentedViewController?.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+            presentingViewController?.view.backgroundColor = UIColor.clearColor()
+            
+        }
     }
     
     

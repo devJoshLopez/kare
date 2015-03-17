@@ -41,7 +41,6 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     
     
-    
     // Dismisses the keyboard if touch event outside the textfield
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
@@ -296,21 +295,19 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
                         self.displayAlert("Story Added!", error: "Your story has been added successfully!")
                         
                         self.imageSelected = false
-                        
-                        // self.storyBodyInputField.placeholder = "Share another story...      "
                         self.storyTitleInputField.text = ""
                         self.pickedImage.image = UIImage(named: "Camera Icon")
                         self.pickedImage.contentMode = UIViewContentMode.Center
                         self.storyBodyInputField.text = nil
-                        
-                        // Go back to story list view
-                        // self.navigationController?.popToRootViewControllerAnimated(true)
                         
                         storyId = story.objectId
                         
                         println("added story successfully \(storyId)")
                         
                         NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+                        
+                        // Go back to story list view
+                        // self.navigationController?.popToRootViewControllerAnimated(true)
 
                         
                     }
@@ -347,7 +344,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         storyBodyInputField.layer.borderWidth = 0.5
         storyBodyInputField.clipsToBounds = true
         
-        // self.storyBodyInputField.placeholder = "Tell everyone your story...      "
+        self.storyBodyInputField.placeholder = "Tell everyone your story...      "
         
         
         }
