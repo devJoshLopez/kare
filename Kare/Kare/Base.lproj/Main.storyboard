@@ -936,7 +936,7 @@
                                     <barButtonItem title="Comment" id="6m3-tM-WgA">
                                         <connections>
                                             <action selector="addComment:" destination="VB9-7G-Bf9" id="zdU-Vu-rB6"/>
-                                            <segue destination="TwO-w2-aXm" kind="presentation" identifier="addCommentSegue" modalPresentationStyle="currentContext" id="gXn-Vk-pK9"/>
+                                            <segue destination="TwO-w2-aXm" kind="presentation" identifier="addCommentSegue" modalPresentationStyle="overCurrentContext" id="gXn-Vk-pK9"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="86N-yP-NzA"/>
@@ -1126,6 +1126,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="backgroundView" destination="yj9-r9-cmh" id="jW6-vm-R3p"/>
                         <outlet property="commentInputBodyField" destination="45f-pc-15a" id="jeB-NS-Czs"/>
                         <outlet property="containerView" destination="4f7-qK-t7D" id="eWm-p9-cPy"/>
                     </connections>

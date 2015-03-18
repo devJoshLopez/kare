@@ -12,6 +12,7 @@ import UIKit
 class AddCommentViewController: UIViewController, UITextViewDelegate {
     
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var containerView: UIView!
     @IBOutlet var commentInputBodyField: UITextView!
     
@@ -64,9 +65,8 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
         
         containerView.layer.cornerRadius = 5
         containerView.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
-        containerView.layer.borderWidth = 0.5
+        containerView.layer.borderWidth = 2
         containerView.clipsToBounds = true
-
         
     }
     

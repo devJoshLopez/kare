@@ -21,6 +21,8 @@ class StoryDetailViewController: UIViewController {
     @IBOutlet var storyBodyTextDetail: UITextView!
     @IBOutlet var storyDetailToolbar: UIToolbar!
     
+    var addCommentViewController = AddCommentViewController()
+    
     var queryStoryDetailData:NSMutableArray = NSMutableArray()
     
     var objectID: String!
@@ -209,8 +211,6 @@ class StoryDetailViewController: UIViewController {
             presentingViewController?.providesPresentationContextTransitionStyle = true
             presentingViewController?.definesPresentationContext = true
             presentedViewController?.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
-            presentingViewController?.view.backgroundColor = UIColor.clearColor()
-            
         }
     }
     
