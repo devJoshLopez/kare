@@ -36,51 +36,51 @@ class StoryDetailViewController: UIViewController {
     
     @IBAction func addHeartButton(sender: AnyObject) {
         
-//        // query the story
-//        // TODO: Need to redo this so if the user is the author it doesnt have to keep query the db and waste data
-//        var queryStoryLove = PFQuery(className:"Story")
-//        queryStoryLove.getObjectInBackgroundWithId(objectID) {
-//            (story: PFObject!, error: NSError!) -> Void in
-//            
-//            if error != nil {
-//                NSLog("%@", error)
-//            } else {
-//
-//                var currentUserId = self.currentUser.objectId
-//                var storyAuthor: AnyObject! = story.objectForKey("username")
-//                var storyLove = story.objectForKey("storyLove") as NSMutableArray
-//                
-//                // do not allow the author of the story to love the story
-//                if currentUserId != storyAuthor.objectId as NSString {
-//                    
-//                    println("you are not the author")
-//                    
-//                    if !storyLove.containsObject(currentUserId) {
-//                        
-//                        storyLove.addObject(currentUserId)
-//                        
-//                        // play heartbeat
-//                        self.audioPlayer.play()
-//                        
-//                        println("added user to storyLove")
-//                        
-//                    } else if storyLove.containsObject(currentUserId) {
-//                        
-//                        storyLove.removeObject(currentUserId)
-//                        println("removed user from storyLove")
-//
-//                    }
-//                    story.saveInBackground()
-//                    story.fetchInBackground()
-//                    self.storyLoveDetail.text = String(storyLove.count - 1)
-//                    
-//                    // vibrates device
-//                    // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-//                    
-//                    
-//                }
-//            }
-//        }
+        // query the story
+        // TODO: Need to redo this so if the user is the author it doesnt have to keep query the db and waste data
+        var queryStoryLove = PFQuery(className:"Story")
+        queryStoryLove.getObjectInBackgroundWithId(objectID) {
+            (story: PFObject!, error: NSError!) -> Void in
+            
+            if error != nil {
+                NSLog("%@", error)
+            } else {
+
+                var currentUserId = self.currentUser.objectId
+                var storyAuthor: AnyObject! = story.objectForKey("username")
+                var storyLove = story.objectForKey("storyLove") as NSMutableArray
+                
+                // do not allow the author of the story to love the story
+                if currentUserId != storyAuthor.objectId as NSString {
+                    
+                    println("you are not the author")
+                    
+                    if !storyLove.containsObject(currentUserId) {
+                        
+                        storyLove.addObject(currentUserId)
+                        
+                        // play heartbeat
+                        self.audioPlayer.play()
+                        
+                        println("added user to storyLove")
+                        
+                    } else if storyLove.containsObject(currentUserId) {
+                        
+                        storyLove.removeObject(currentUserId)
+                        println("removed user from storyLove")
+
+                    }
+                    story.saveInBackground()
+                    story.fetchInBackground()
+                    self.storyLoveDetail.text = String(storyLove.count - 1)
+                    
+                    // vibrates device
+                    // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    
+                    
+                }
+            }
+        }
     }
     
     
@@ -88,32 +88,32 @@ class StoryDetailViewController: UIViewController {
     
     @IBAction func addComment(sender: AnyObject) {
         
-        // alert controller to add comments
-        let addComment:UIAlertController = UIAlertController(title: "Add a Comment", message: "What did you feel from this story?", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        addComment.view.tintColor = UIColor(red:0.04, green:0.67, blue:0.56, alpha:1.0)
-        addComment.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.94, alpha:1.0)
-        
-        // textfield
-        addComment.addTextFieldWithConfigurationHandler({
-            (textField:UITextField!) in
-            
-        })
-        
-        // add an alert action
-        let firstAlertAction:UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-        
-        // add an alert action
-        let secondAlertAction:UIAlertAction = UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-            
-            println("comment done")
-        })
-        
-        addComment.addAction(firstAlertAction)
-        addComment.addAction(secondAlertAction)
-        
-        // display alert to the user
-        self.presentViewController(addComment, animated: true, completion: nil)
+//        // alert controller to add comments
+//        let addComment:UIAlertController = UIAlertController(title: "Add a Comment", message: "What did you feel from this story?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+//        
+//        addComment.view.tintColor = UIColor(red:0.04, green:0.67, blue:0.56, alpha:1.0)
+//        addComment.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.94, alpha:1.0)
+//        
+//        // textfield
+//        addComment.addTextFieldWithConfigurationHandler({
+//            (textField:UITextField!) in
+//            
+//        })
+//        
+//        // add an alert action
+//        let firstAlertAction:UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+//        
+//        // add an alert action
+//        let secondAlertAction:UIAlertAction = UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+//            
+//            println("comment done")
+//        })
+//        
+//        addComment.addAction(firstAlertAction)
+//        addComment.addAction(secondAlertAction)
+//        
+//        // display alert to the user
+//        self.presentViewController(addComment, animated: true, completion: nil)
     }
     
     
@@ -203,7 +203,32 @@ class StoryDetailViewController: UIViewController {
             }
         }
         
-    }
+        
+        var findStoryCommentData = PFQuery(className:"Comment")
+        findStoryCommentData.whereKey("parentStory", equalTo: "\(objectID)")
+        findStoryCommentData.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]!, error:NSError!) -> Void in
+            
+            if error == nil {
+                
+                // The query succeeded/
+                println("Successfully retrieved \(objects.count) comments.")
+                
+                // Do something with the found stories
+                for object in objects {
+                    
+                    let comment:PFObject = object as PFObject
+                    println("comment: \(comment)")
+                    
+                    //self.storyListViewData.addObject(story)
+                }
+                
+
+            }
+        }
+        
+}
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addCommentSegue" {
@@ -211,6 +236,9 @@ class StoryDetailViewController: UIViewController {
             presentingViewController?.providesPresentationContextTransitionStyle = true
             presentingViewController?.definesPresentationContext = true
             presentedViewController?.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+            
+            var dVC:AddCommentViewController = segue.destinationViewController as AddCommentViewController
+            dVC.objectID = objectID
         }
     }
     

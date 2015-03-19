@@ -202,6 +202,7 @@
 				55C7C53F1A64717000D9C38A /* StoryListViewController.swift */,
 				5552C29B1AB27D3800F0EC15 /* StoryListTableViewCell.swift */,
 				55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */,
+				55CFF1D41AB77603006F09A8 /* AddCommentViewController.swift */,
 				55C414C81A7588B80086B4F7 /* PageViewController.swift */,
 				55C7C5431A64723600D9C38A /* MenuViewController.swift */,
 				55C074321A6C9E8200F6BF94 /* LoginViewController.swift */,
@@ -213,7 +214,6 @@
 				55F0FAF31A5EFBBE002F2601 /* Images.xcassets */,
 				55C92F7C1A7372A000542BA8 /* Functions */,
 				55F0FAEA1A5EFBBE002F2601 /* Supporting Files */,
-				55CFF1D41AB77603006F09A8 /* AddCommentViewController.swift */,
 			);
 			path = Kare;
 			sourceTree = "<group>";

@@ -16,11 +16,38 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var containerView: UIView!
     @IBOutlet var commentInputBodyField: UITextView!
     
+    var currentUser = PFUser.currentUser()
+    var objectID: String!
+    
     @IBAction func cancelButton(sender: UIButton) {
         // Go to story detail view
         self.dismissViewControllerAnimated(true, completion: nil)
         println("cancel comment")
     }
+    
+    
+    
+    @IBAction func addComentButton(sender: UIButton) {
+        println(objectID)
+        
+        var userComment = PFObject(className:"Comment")
+        userComment["commentBody"] = commentInputBodyField.text
+        
+        // Add a relation between the Post and Comment
+        userComment["parentStory"] = PFObject(withoutDataWithClassName:"Story", objectId: objectID)
+        
+        // create variable for current user id
+        var currentUserId = currentUser.objectId
+        
+        userComment["username"] = PFUser.currentUser()
+        
+        // This will save both myPost and myComment
+        userComment.saveInBackground()
+        
+    }
+    
+    
+    
     
     // Dismisses the keyboard if touch event outside the textfield
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
