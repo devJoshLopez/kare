@@ -41,8 +41,39 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
         
         userComment["username"] = PFUser.currentUser()
         
-        // This will save both myPost and myComment
-        userComment.saveInBackground()
+        userComment.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
+            
+            if success == false {
+                
+                self.displayAlert("Could Not Add Comment", error: "Please Try Again Later.")
+                
+            } else {
+                
+                self.displayAlert("Story Added!", error: "Your story has been added successfully!")
+                
+                println("added comment successfully")
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+                
+            }
+        }
+        
+    }
+    
+    
+    
+    // Function to show basic alert controller
+    func displayAlert(title:String, error:String) {
+        
+        var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
