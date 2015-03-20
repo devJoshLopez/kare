@@ -19,7 +19,11 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
     var currentUser = PFUser.currentUser()
     var objectID: String!
     
+    
+    
+    
     @IBAction func cancelButton(sender: UIButton) {
+        self.commentInputBodyField.resignFirstResponder()
         // Go to story detail view
         self.dismissViewControllerAnimated(true, completion: nil)
         println("cancel comment")
@@ -27,18 +31,12 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
     
     
     
+    
     @IBAction func addComentButton(sender: UIButton) {
-        println(objectID)
+        println("story id: \(self.objectID)")
         
         var userComment = PFObject(className:"Comment")
         userComment["commentBody"] = commentInputBodyField.text
-        
-        // Add a relation between the Post and Comment
-        userComment["parentStory"] = PFObject(withoutDataWithClassName:"Story", objectId: objectID)
-        
-        // create variable for current user id
-        var currentUserId = currentUser.objectId
-        
         userComment["username"] = PFUser.currentUser()
         
         userComment.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
@@ -49,16 +47,26 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
                 
             } else {
                 
-                self.displayAlert("Story Added!", error: "Your story has been added successfully!")
+                // get story class
+                var story = PFObject(withoutDataWithClassName: "Story", objectId: self.objectID) // PFObject(withoutDataWithObjectId: self.objectID)
+                println("story: \(story)")
+
+                var PFRelation = story.relationForKey("comments")
+                var addRelation = userComment
+                PFRelation.addObject(addRelation)
+                story.saveInBackground()
+                
+                self.displayAlert("Comment Added!", error: "Your comment has been added successfully!")
                 
                 println("added comment successfully")
                 
-                NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
+                self.commentInputBodyField.resignFirstResponder()
                 
             }
         }
         
     }
+    
     
     
     
@@ -69,6 +77,7 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
             
+            self.commentInputBodyField.resignFirstResponder()
             self.dismissViewControllerAnimated(true, completion: nil)
             
         }))
@@ -85,6 +94,9 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
         self.commentInputBodyField.resignFirstResponder()
     }
     
+    
+    
+    
     // animates moving of the view
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         var movementDuration:NSTimeInterval = 0.3
@@ -96,19 +108,21 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
         UIView.commitAnimations()
     }
     
+    
+    
+    
     // moves viewcontroller up when editing body input field
     func textViewDidBeginEditing(commentInputBodyField: UITextView) {
-        println("tada")
-        // storyBodyInputField.updateConstraints()
         animateViewMoving(true, moveValue: 100)
     }
     
     func textViewDidEndEditing(commentInputBodyField: UITextView) {
-        println("tada2")
         animateViewMoving(false, moveValue: 100)
     }
     
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -132,16 +146,6 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

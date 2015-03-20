@@ -224,7 +224,9 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         cell.cellStoryBeats.text = storyLoveCount
         
         // gets comment count
-        cell.cellStoryCommentsCount.text = story.objectForKey("storyCommentCount") as? String
+        // TODO: Need to get the comments count
+        println(story.objectForKey("comments"))
+        cell.cellStoryCommentsCount.text = "0"
         
         // get story location and get the distance between story and user
         var storyLocation:PFGeoPoint = story.objectForKey("storyLocation") as PFGeoPoint

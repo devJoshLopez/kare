@@ -51,6 +51,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
     
     // animates moving of the view
     func animateViewMoving (up:Bool, moveValue :CGFloat){
+        println("animating")
         var movementDuration:NSTimeInterval = 0.3
         var movement:CGFloat = ( up ? -moveValue : moveValue)
         UIView.beginAnimations( "animateView", context: nil)
@@ -258,9 +259,9 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
             // Creates a story object to send to parse.com
             var story = PFObject(className:"Story")
             story["storyLove"] = [currentUserId]
-            story["storyCommentCount"] = "0"
+            // story["storyCommentCount"] = "0"
             story["storyLocation"] = self.imageLocation
-            story["storyFlagCount"] = "0"
+            // story["storyFlagCount"] = "0"
             story["username"] = PFUser.currentUser()
             story["storyTitle"] = storyTitleInputField.text
             story["storyBody"] = storyBodyInputField.text
@@ -344,7 +345,7 @@ class AddStoryViewController: UIViewController, UINavigationControllerDelegate, 
         storyBodyInputField.layer.borderWidth = 0.5
         storyBodyInputField.clipsToBounds = true
         
-        self.storyBodyInputField.placeholder = "Tell everyone your story...      "
+        // self.storyBodyInputField.placeholder = "Tell everyone your story...      "
         
         
         }
