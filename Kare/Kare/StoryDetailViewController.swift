@@ -74,7 +74,7 @@ class StoryDetailViewController: UIViewController {
                     story.fetchInBackground()
                     self.storyLoveDetail.text = String(storyLove.count - 1)
                     
-                    // vibrates device
+                    // vibrates device, need to find a way to make the device vibrate 2 times like a heartbeat
                     // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     
                     
@@ -82,53 +82,17 @@ class StoryDetailViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-    
-    @IBAction func addComment(sender: AnyObject) {
-        
-//        // alert controller to add comments
-//        let addComment:UIAlertController = UIAlertController(title: "Add a Comment", message: "What did you feel from this story?", preferredStyle: UIAlertControllerStyle.ActionSheet)
-//        
-//        addComment.view.tintColor = UIColor(red:0.04, green:0.67, blue:0.56, alpha:1.0)
-//        addComment.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.94, alpha:1.0)
-//        
-//        // textfield
-//        addComment.addTextFieldWithConfigurationHandler({
-//            (textField:UITextField!) in
-//            
-//        })
-//        
-//        // add an alert action
-//        let firstAlertAction:UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-//        
-//        // add an alert action
-//        let secondAlertAction:UIAlertAction = UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-//            
-//            println("comment done")
-//        })
-//        
-//        addComment.addAction(firstAlertAction)
-//        addComment.addAction(secondAlertAction)
-//        
-//        // display alert to the user
-//        self.presentViewController(addComment, animated: true, completion: nil)
-    }
-    
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create url path dor audio
+        // create url path for audio
         let fileLocation = NSString(string:NSBundle.mainBundle().pathForResource("heartbeat", ofType: "wav")!)
         var error: NSError? = nil
         audioPlayer = AVAudioPlayer(contentsOfURL: NSURL(string: fileLocation), error: &error)
-        // audioPlayer.volume = 0.8
-
-        // Do any additional setup after loading the view.
         
         // hide toolbar for users not logged in
         if currentUser == nil {
@@ -202,32 +166,9 @@ class StoryDetailViewController: UIViewController {
                 println("Error: %@ %@", error, error.userInfo!)
             }
         }
-        
-        
-        var findStoryCommentData = PFQuery(className:"Comment")
-        findStoryCommentData.whereKey("parentStory", equalTo: "\(objectID)")
-        findStoryCommentData.findObjectsInBackgroundWithBlock{
-            (objects:[AnyObject]!, error:NSError!) -> Void in
-            
-            if error == nil {
-                
-                // The query succeeded/
-                println("Successfully retrieved \(objects.count) comments.")
-                
-                // Do something with the found stories
-                for object in objects {
-                    
-                    let comment:PFObject = object as PFObject
-                    println("comment: \(comment)")
-                    
-                    //self.storyListViewData.addObject(story)
-                }
-                
-
-            }
-        }
-        
-}
+    }
+    
+    
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -252,11 +193,11 @@ class StoryDetailViewController: UIViewController {
     
     
     
+    
     // TODO: Need to figure out how to reload the data on the storylistviewcontroller when a user touches the back button on this viewcontroller
     // Warning: A long-running operation is being executed on the main thread.
     deinit {
         NSNotificationCenter.defaultCenter().postNotificationName("NotificationIdentifier", object: nil)
     }
-    
 
 }

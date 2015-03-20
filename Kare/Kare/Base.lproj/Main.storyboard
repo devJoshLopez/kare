@@ -935,7 +935,6 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1ha-SW-9zX"/>
                                     <barButtonItem title="Comment" id="6m3-tM-WgA">
                                         <connections>
-                                            <action selector="addComment:" destination="VB9-7G-Bf9" id="zdU-Vu-rB6"/>
                                             <segue destination="TwO-w2-aXm" kind="presentation" identifier="addCommentSegue" modalPresentationStyle="overCurrentContext" id="gXn-Vk-pK9"/>
                                         </connections>
                                     </barButtonItem>

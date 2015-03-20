@@ -28,7 +28,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         return refreshControl
-        }()
+    }()
     
     
     
@@ -38,9 +38,6 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         
         // reload the story data
         self.loadStoryData()
-
-        
-       // refreshControl.endRefreshing()
     }
     
     
@@ -74,12 +71,8 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         // pull to refresh
         self.storyTableView.addSubview(refreshControl)
     }
-    
-    
-    
-    
 
-    
+
     
     
     func methodOfReceivedNotification(notification: NSNotification){
@@ -88,6 +81,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         self.loadStoryData()
         })
     }
+    
     
     
     
@@ -183,7 +177,6 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         
         // return the number of sections
         return 1
-        
     }
     
     
@@ -193,7 +186,6 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.storyListViewData.count
-        
     }
     
     
@@ -225,7 +217,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         
         // gets comment count
         // TODO: Need to get the comments count
-        println(story.objectForKey("comments"))
+        // println(story.objectForKey("comments"))
         cell.cellStoryCommentsCount.text = "0"
         
         // get story location and get the distance between story and user
@@ -289,6 +281,7 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
         return 110
     }
 
+    
     
     
     // login/register button
