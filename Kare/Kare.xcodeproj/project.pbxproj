@@ -29,6 +29,7 @@
 		55C7C5421A6471C600D9C38A /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */; };
 		55C7C5441A64723600D9C38A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7C5431A64723600D9C38A /* MenuViewController.swift */; };
 		55C92F7B1A73721E00542BA8 /* UITextView+placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */; };
+		55CD6E141ABFBFBD007312F7 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CD6E131ABFBFBD007312F7 /* TutorialViewController.swift */; };
 		55CFF1D51AB77603006F09A8 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFF1D41AB77603006F09A8 /* AddCommentViewController.swift */; };
 		55D1AE1C1AB35C0800E7EF36 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D1AE1B1AB35C0700E7EF36 /* AVFoundation.framework */; };
 		55D1AE1E1AB3A8AD00E7EF36 /* heartbeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55D1AE1D1AB3A8AD00E7EF36 /* heartbeat.wav */; };
@@ -83,6 +84,7 @@
 		55C7C5411A6471C600D9C38A /* StoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		55C7C5431A64723600D9C38A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		55C92F7A1A73721E00542BA8 /* UITextView+placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+placeholder.swift"; sourceTree = "<group>"; };
+		55CD6E131ABFBFBD007312F7 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		55CFF1D41AB77603006F09A8 /* AddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
 		55D1AE1B1AB35C0700E7EF36 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		55D1AE1D1AB3A8AD00E7EF36 /* heartbeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat.wav; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				55F0FAEC1A5EFBBE002F2601 /* AppDelegate.swift */,
+				55CD6E131ABFBFBD007312F7 /* TutorialViewController.swift */,
 				55F0FAF01A5EFBBE002F2601 /* Main.storyboard */,
 				55C7C53F1A64717000D9C38A /* StoryListViewController.swift */,
 				5552C29B1AB27D3800F0EC15 /* StoryListTableViewCell.swift */,
@@ -383,6 +386,7 @@
 				55C92F7B1A73721E00542BA8 /* UITextView+placeholder.swift in Sources */,
 				55CFF1D51AB77603006F09A8 /* AddCommentViewController.swift in Sources */,
 				55C0742F1A6C649500F6BF94 /* RegisterViewController.swift in Sources */,
+				55CD6E141ABFBFBD007312F7 /* TutorialViewController.swift in Sources */,
 				55C7C5421A6471C600D9C38A /* StoryDetailViewController.swift in Sources */,
 				55C074331A6C9E8200F6BF94 /* LoginViewController.swift in Sources */,
 				55C074311A6C8E3B00F6BF94 /* ForgotViewController.swift in Sources */,
