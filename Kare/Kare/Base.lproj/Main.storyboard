@@ -481,25 +481,25 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWF-ln-aW3" userLabel="View1">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Family!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBu-Rb-x7P">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to the Family!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBu-Rb-x7P">
                                                         <rect key="frame" x="10" y="55" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Be the change you wish to see in the world.&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-BU-ftf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&quot;Be the change you wish to see in the world.&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-BU-ftf">
                                                         <rect key="frame" x="10" y="114" width="355" height="18"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                         <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Mahatma Gandhi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzX-nW-D6t">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="- Mahatma Gandhi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzX-nW-D6t">
                                                         <rect key="frame" x="10" y="137" width="355" height="18"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                         <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-tP-cKH">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-tP-cKH">
                                                         <rect key="frame" x="10" y="180" width="355" height="175"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <string key="text">Be proud that you are helping make this world a better place by using this app. Kindness and caring are contagious so lets spread it like fire!  Please sit down and relax while we introduce you to Kare. If you dont have the time you can skip this tutorial by touching the button below and dive in head first.</string>
@@ -507,7 +507,7 @@
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-eD-Ky1">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-eD-Ky1">
                                                         <rect key="frame" x="10" y="509" width="355" height="46"/>
                                                         <color key="backgroundColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
@@ -519,7 +519,7 @@
                                                             <action selector="sendPasswordResetButton:" destination="fXu-CP-Ffs" eventType="touchUpInside" id="fZy-wZ-s5a"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGg-vO-yeU">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGg-vO-yeU">
                                                         <rect key="frame" x="10" y="575" width="355" height="32"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <state key="normal" title="Skip Tutorial">
@@ -553,13 +553,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDb-3V-zlz" userLabel="View2">
                                                 <rect key="frame" x="375" y="0.0" width="375" height="667"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stories of Inspiration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQc-2L-Co5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Stories of Inspiration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQc-2L-Co5">
                                                         <rect key="frame" x="10" y="55" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwx-0M-OSD">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwx-0M-OSD">
                                                         <rect key="frame" x="10" y="114" width="355" height="353"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <string key="text">Stories on Kare are positive. We try to receive stories that will make people smile and get a sense of what the future could be all about.
@@ -571,7 +571,7 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaR-40-vWY">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaR-40-vWY">
                                                         <rect key="frame" x="10" y="509" width="355" height="46"/>
                                                         <color key="backgroundColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
@@ -583,7 +583,7 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                                             <action selector="sendPasswordResetButton:" destination="fXu-CP-Ffs" eventType="touchUpInside" id="i92-Ak-tZI"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-Fb-9i2">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-Fb-9i2">
                                                         <rect key="frame" x="10" y="575" width="355" height="32"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <state key="normal" title="Skip Tutorial">
@@ -611,13 +611,13 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qoj-nt-216" userLabel="View3">
                                                 <rect key="frame" x="750" y="0.0" width="375" height="667"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interacting with Stories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="759-ee-SJu">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Interacting with Stories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="759-ee-SJu">
                                                         <rect key="frame" x="10" y="55" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vog-by-Jbc">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vog-by-Jbc">
                                                         <rect key="frame" x="10" y="114" width="355" height="96"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <string key="text">After this tutorial you will start seeing additional options you didnt see. When viewing a story a bottom navigation will appear with the following action links.</string>
@@ -625,7 +625,7 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-EN-O2j">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-EN-O2j">
                                                         <rect key="frame" x="10" y="509" width="355" height="46"/>
                                                         <color key="backgroundColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
@@ -637,7 +637,7 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                                             <action selector="sendPasswordResetButton:" destination="fXu-CP-Ffs" eventType="touchUpInside" id="Du2-TM-Wgg"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf1-zs-PgX">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf1-zs-PgX">
                                                         <rect key="frame" x="10" y="575" width="355" height="32"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <state key="normal" title="Skip Tutorial">
@@ -670,10 +670,10 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6et-bB-BlC" userLabel="View4">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6et-bB-BlC" userLabel="View4">
                                                 <rect key="frame" x="1125" y="0.0" width="6000" height="667"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kare Points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-7I-d4s">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Kare Points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-7I-d4s">
                                                         <rect key="frame" x="10" y="55" width="5980" height="34"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1234,19 +1234,19 @@ You can also keep track of how you are doing compared to others by tapping on th
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-Ua-MDm">
-                                                <rect key="frame" x="37" y="9" width="35" height="18"/>
+                                                <rect key="frame" x="37" y="11" width="34" height="16"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nht-jB-dZy">
-                                                <rect key="frame" x="10" y="34" width="355" height="34"/>
+                                                <rect key="frame" x="10" y="34" width="355" height="30"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                                 <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDF-aw-6F7">
-                                                <rect key="frame" x="10" y="73" width="355" height="20"/>
+                                                <rect key="frame" x="10" y="69" width="355" height="18"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                 <color key="textColor" red="0.035294117649999998" green="0.6705882353" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1255,13 +1255,13 @@ You can also keep track of how you are doing compared to others by tapping on th
                                                 <rect key="frame" x="10" y="10" width="22" height="20"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance &amp; Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h4-QS-ezh">
-                                                <rect key="frame" x="10" y="98" width="355" height="18"/>
+                                                <rect key="frame" x="10" y="92" width="355" height="16"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yIb-15-Cum">
-                                                <rect key="frame" x="38" y="139" width="300" height="200"/>
+                                                <rect key="frame" x="38" y="131" width="300" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Khx-mG-TWI"/>
                                                     <constraint firstAttribute="width" constant="300" id="gbd-UH-Tnd"/>
@@ -1271,7 +1271,7 @@ You can also keep track of how you are doing compared to others by tapping on th
                                                 <rect key="frame" x="345" y="10" width="20" height="20"/>
                                             </imageView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="104" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dxT-tB-U2G">
-                                                <rect key="frame" x="10" y="436" width="355" height="414"/>
+                                                <rect key="frame" x="10" y="423" width="355" height="427"/>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="separatorColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1315,19 +1315,19 @@ You can also keep track of how you are doing compared to others by tapping on th
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-uy-mOE">
-                                                <rect key="frame" x="10" y="404" width="152" height="27"/>
+                                                <rect key="frame" x="10" y="394" width="355" height="24"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="20"/>
                                                 <color key="textColor" red="0.44705882349999998" green="0.59607843140000005" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5L-t8-sJN">
-                                                <rect key="frame" x="273" y="9" width="67" height="18"/>
+                                                <rect key="frame" x="276" y="11" width="64" height="16"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pf-Ea-N5v">
-                                                <rect key="frame" x="10" y="354" width="347" height="35"/>
+                                                <rect key="frame" x="10" y="346" width="347" height="33"/>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
@@ -1341,7 +1341,7 @@ You can also keep track of how you are doing compared to others by tapping on th
                                             <constraint firstItem="3Pf-Ea-N5v" firstAttribute="top" secondItem="yIb-15-Cum" secondAttribute="bottom" constant="15" id="3He-js-Xtt"/>
                                             <constraint firstAttribute="trailing" secondItem="jDF-aw-6F7" secondAttribute="trailing" constant="10" id="3Qg-tS-cjY"/>
                                             <constraint firstAttribute="trailing" secondItem="nht-jB-dZy" secondAttribute="trailing" constant="10" id="6gh-eB-D1B"/>
-                                            <constraint firstItem="Y5L-t8-sJN" firstAttribute="top" secondItem="fdD-fs-mNX" secondAttribute="top" constant="9" id="7D0-Bp-jqR"/>
+                                            <constraint firstItem="Y5L-t8-sJN" firstAttribute="top" secondItem="fdD-fs-mNX" secondAttribute="top" constant="11" id="7D0-Bp-jqR"/>
                                             <constraint firstItem="1Kq-5W-F5j" firstAttribute="leading" secondItem="fdD-fs-mNX" secondAttribute="leading" constant="10" id="Duh-Ou-SOZ"/>
                                             <constraint firstAttribute="trailing" secondItem="K7b-jg-hmx" secondAttribute="trailing" constant="10" id="FVI-bi-Td5"/>
                                             <constraint firstItem="PfB-uy-mOE" firstAttribute="top" secondItem="3Pf-Ea-N5v" secondAttribute="bottom" constant="15" id="PcM-In-qAf"/>
@@ -1352,12 +1352,12 @@ You can also keep track of how you are doing compared to others by tapping on th
                                             <constraint firstAttribute="trailing" secondItem="dxT-tB-U2G" secondAttribute="trailing" constant="10" id="VYJ-2l-SoH"/>
                                             <constraint firstItem="nht-jB-dZy" firstAttribute="leading" secondItem="fdD-fs-mNX" secondAttribute="leading" constant="10" id="W2v-Gc-zUt"/>
                                             <constraint firstItem="K7b-jg-hmx" firstAttribute="top" secondItem="fdD-fs-mNX" secondAttribute="top" constant="10" id="aZK-8M-09v"/>
-                                            <constraint firstItem="xGg-Ua-MDm" firstAttribute="top" secondItem="fdD-fs-mNX" secondAttribute="top" constant="9" id="bKe-2h-nY4"/>
+                                            <constraint firstItem="xGg-Ua-MDm" firstAttribute="top" secondItem="fdD-fs-mNX" secondAttribute="top" constant="11" id="bKe-2h-nY4"/>
                                             <constraint firstItem="1h4-QS-ezh" firstAttribute="leading" secondItem="fdD-fs-mNX" secondAttribute="leading" constant="10" id="d6E-N2-vjD"/>
                                             <constraint firstAttribute="bottom" secondItem="dxT-tB-U2G" secondAttribute="bottom" constant="50" id="f6A-pn-MmJ"/>
                                             <constraint firstAttribute="centerX" secondItem="yIb-15-Cum" secondAttribute="centerX" id="fhh-xI-dec"/>
                                             <constraint firstItem="nht-jB-dZy" firstAttribute="top" secondItem="fdD-fs-mNX" secondAttribute="top" constant="34" id="iFY-J4-ChJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="PfB-uy-mOE" secondAttribute="trailing" constant="213" id="ls3-CN-ITG"/>
+                                            <constraint firstAttribute="trailing" secondItem="PfB-uy-mOE" secondAttribute="trailing" constant="10" id="ls3-CN-ITG"/>
                                             <constraint firstItem="yIb-15-Cum" firstAttribute="top" secondItem="1h4-QS-ezh" secondAttribute="bottom" constant="23" id="mZu-ZO-Ap2"/>
                                             <constraint firstItem="K7b-jg-hmx" firstAttribute="leading" secondItem="Y5L-t8-sJN" secondAttribute="trailing" constant="5" id="nSX-45-4eq"/>
                                             <constraint firstItem="jDF-aw-6F7" firstAttribute="leading" secondItem="fdD-fs-mNX" secondAttribute="leading" constant="10" id="ncA-7A-GdW"/>
