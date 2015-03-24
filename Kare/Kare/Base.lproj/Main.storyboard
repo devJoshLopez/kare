@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Pw-1y-hWW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lHl-dI-2fO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -502,7 +502,7 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-tP-cKH">
                                                         <rect key="frame" x="10" y="180" width="355" height="175"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <mutableString key="text">Be proud that you are helping make this world a better place by using this app. Kindness and caring are contagious so lets spread it like fire!  Please sit down and relax while we introduce you to Kare. If you dont have the time you can skip this tutorial by touching the button below and dive in head first.</mutableString>
+                                                        <string key="text">Be proud that you are helping make this world a better place by using this app. Kindness and caring are contagious so lets spread it like fire!  Please sit down and relax while we introduce you to Kare. If you dont have the time you can skip this tutorial by touching the button below and dive in head first.</string>
                                                         <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -562,11 +562,11 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwx-0M-OSD">
                                                         <rect key="frame" x="10" y="114" width="355" height="353"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <mutableString key="text">Stories on Kare are positive. We try to receive stories that will make people smile and get a sense of what the future could be all about.
+                                                        <string key="text">Stories on Kare are positive. We try to receive stories that will make people smile and get a sense of what the future could be all about.
 
 Get outside and be mindful of your surroundings. You might notice an elderly neighbor who could use some help raking leaves, some trash laying on the ground that needs picking up, a child walking in the rain without a coat, or you may feel like doing a random act of kindness by bringing flowers to a hospital to a patient who hasn’t had any visitors.
 
-For your first story we recommend doing one on yourself. Tell us who you are, give us a big smile picture, and explain how you are making a difference in the community you live in.</mutableString>
+For your first story we recommend doing one on yourself. Tell us who you are, give us a big smile picture, and explain how you are making a difference in the community you live in.</string>
                                                         <color key="textColor" red="0.37254901959999998" green="0.37254901959999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -670,10 +670,10 @@ For your first story we recommend doing one on yourself. Tell us who you are, gi
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6et-bB-BlC" userLabel="View4">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6et-bB-BlC" userLabel="View4">
                                                 <rect key="frame" x="1125" y="0.0" width="6000" height="667"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Kare Points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-7I-d4s">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kare Points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-7I-d4s">
                                                         <rect key="frame" x="10" y="55" width="5980" height="34"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="25"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
