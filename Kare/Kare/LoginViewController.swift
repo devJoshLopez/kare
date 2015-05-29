@@ -13,8 +13,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var loginUsernameField: UITextField!
     @IBOutlet var loginPasswordField: UITextField!
     
+    // MARK: - ViewController lifetime Methods:
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        
+        // Set the view controller as the delegate for the username textfield
+        self.loginUsernameField.delegate = self
+        self.loginPasswordField.delegate = self
+    }
     
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: - UITextField's methods:
     
     // Dismisses the keyboard if touch event outside the textfield
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -34,7 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
+    // MARK: - @IBActions' methods:
     
     @IBAction func loginActionButton(sender: AnyObject) {
         if loginUsernameField.text != "" && loginPasswordField.text != "" {
@@ -43,7 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             PFUser.logInWithUsernameInBackground(loginUsernameField.text, password:loginPasswordField.text) {
                 (user: PFUser!, error: NSError!) -> Void in
                 if user != nil {
-                    // User DOES exists logs them in and...
+                    // User DOES exists, log him in and...
                     println("Login Succesful!")
                     
                     // Go back to story list view
@@ -52,6 +71,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     // User DOES NOT exist
                     println("User Does Not Exist")
+                    // The error can be displayed as UIAlertView because, maybe, the user did not input the correct password (a typo?).
+                    println("LogInVC: The following error occured: \(error).")
                     
                     let loginFailedAlert = UIAlertView()
                     loginFailedAlert.title = "Login Failed"
@@ -63,10 +84,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             
         } else {
-            // If the Username and Password field ARE empty do...
+            // If the Username and Password fields ARE empty do...
             let loginRequiredAlert = UIAlertView()
             loginRequiredAlert.title = "Attention"
-            loginRequiredAlert.message = "Username and Password Fields Are Required"
+            loginRequiredAlert.message = "Username and Password Fields Are Required."
             loginRequiredAlert.addButtonWithTitle("Ok")
             loginRequiredAlert.show()
         }
@@ -91,23 +112,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        
-        // Set the view controller as the delegate for the username textfield
-        self.loginUsernameField.delegate = self
-        self.loginPasswordField.delegate = self
-    }
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
 }

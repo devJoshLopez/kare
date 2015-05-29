@@ -172,7 +172,8 @@ class StoryListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     
-    // Table view data source
+    // MARK: - Table view data source:
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         // return the number of sections
